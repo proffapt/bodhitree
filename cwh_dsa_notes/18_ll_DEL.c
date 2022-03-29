@@ -22,8 +22,8 @@ struct node *deletion(struct node *start, int index){
         ptr = ptr->next;
         end++;
     }
-    ptr = start; //never forget!!
-    
+    ptr = start; //never forget!! 
+
     if ( index == 1 ){
         ptr = ptr->next;
         free(start); // freeing the memory is important while deleting.
@@ -71,7 +71,7 @@ int main(){
     fifth->next = NULL;
     display(head);
 
-    int index = 3;
+    int index = -7;
     struct node *deletedll = deletion(head, index);
     display(deletedll);
 
