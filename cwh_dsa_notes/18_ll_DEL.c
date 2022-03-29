@@ -22,7 +22,7 @@ struct node *deletion(struct node *start, int index){
         ptr = ptr->next;
         end++;
     }
-    ptr = start;
+    ptr = start; //never forget!!
     
     if ( index == 1 ){
         ptr = ptr->next;
