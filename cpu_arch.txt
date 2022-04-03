@@ -2,3 +2,9 @@ The best resources for clearing doubts regarding cpu archs and stuff:
 
 https://chowdera.com/2021/12/202112220630575160.html
 https://youtu.be/AADZo73yrq4
+
+32 bit == x86 == i386 == IA32
+64 bit == amd64 == x86_64 == x86-64 == x64 (backwords compaitible with x86 instruction set) -- AMD was first to implement
+IA64 == Itenium (NOT backwards compaitible with x86 IS)
+arm32 == ARMv7 and before -- RISC based 32 bit IS architecture
+arm64 -- ARMv8-A RISC based 64 bit IS architecture (backword compaitible with 32 bit RISC ISA)
