@@ -9,3 +9,4 @@ https://youtu.be/AADZo73yrq4
 IA64 == Itenium (NOT backwards compaitible with x86 IS)
 arm32 == ARMv7 and before -- RISC based 32 bit IS architecture
 arm64 -- ARMv8-A RISC based 64 bit IS architecture (backword compaitible with 32 bit RISC ISA)
+It seems that ARM64 was created by Apple and AARCH64 by the others, most notably GNU/GCC guys
