@@ -3,6 +3,7 @@
 	Interfaces have only and only abstract methods.. nothing should be defined in them.
 	
 	Can't create objects of interfaces.. but can reference some object with it.
+	Interface obj = new ConcreateClass();
 */
 
 interface PedalAndBreaks{
