@@ -39,10 +39,11 @@ class WordPad{
 	void readFile(){
 		File myFile = new File(fileName);
 		try{
-			Scanner sc = new Scanner(myFile);
+			Scanner sc = new Scanner(myFile); // input stream is the object to that file
 			// sc has taken input by now.. if it exists.. time to print the data
-			while(sc.hasNextLine())
-				System.out.println(sc.nextLine());
+			while(sc.hasNextLine()) // jab tak next line hai
+				System.out.println(sc.nextLine()); // tab tak line ko print karte jaa
+			sc.close();
 		}
 		catch(FileNotFoundException e){
 			e.printStackTrace();	
@@ -63,6 +64,6 @@ class Main{
 		// file.createFile();
 		// file.writeFile("I am proffapt.\nI am not a related to apt anyhow.");
 		// file.readFile();
-		file.deleteFile();
+		// file.deleteFile();
 	}
 }
