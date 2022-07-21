@@ -15,6 +15,7 @@ class Main{
 		Calendar c1 = Calendar.getInstance(TimeZone.getTimeZone("Asia/Singapore")); // TimeZone's constructor is the id of timezone..
 		System.out.println("The time zone is: "+c1.getTimeZone());
 		System.out.println("The time zone ID is: "+c1.getTimeZone().getID());
+		System.out.println(c1.getTime());
 		System.out.println(c.get(Calendar.DATE));
 		System.out.println(c.get(Calendar.SECOND));
 		System.out.println(c.get(Calendar.HOUR));
