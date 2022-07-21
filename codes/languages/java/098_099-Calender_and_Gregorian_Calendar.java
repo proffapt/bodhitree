@@ -9,10 +9,13 @@ class Main{
 		System.out.println("The calendar type is: "+c.getCalendarType());
 		System.out.println("The time zone is: "+c.getTimeZone());
 		System.out.println("The time zone ID is: "+c.getTimeZone().getID());
-		System.out.println("The time zone ID is: "+c.getTimeZone().getID());
-		System.out.println("The time zone ID is: "+c.getTimeZone().getID());
-		System.out.println("The time zone ID is: "+c.getTimeZone().getID());
-		System.out.println("The time zone ID is: "+c.getTimeZone().getID());
+		System.out.println(c.getTime());
+		System.out.println(c.getTime());
+		System.out.println(c.getTime());
+		System.out.println(c.getTime());
+		System.out.println(c.getTime());
+		System.out.println(c.getTime());
+		System.out.println(c.getTime());
 		System.out.println(c.getTime());
 		// System.out.println(c.getDate()); --> method was for Date class!
 
