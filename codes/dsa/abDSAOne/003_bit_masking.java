@@ -27,20 +27,20 @@ class Main{
 			else System.out.println("The "+i+"th bit was: 1");
 		}
 		System.out.print("Enter the value to be changed to: ");
-		int change_to=s.nextInt(), new_n=-1;
-		if(change_to==1){
+		int changeTo=s.nextInt(), newN=-1;
+		if(changeTo==1){
 			mask=1<<i;
-			new_n=n|mask;
+			newN=n|mask;
 		}
-		else if(change_to==0){
+		else if(changeTo==0){
 			mask=~(1<<i); // visible logic
-			new_n=n&mask;
+			newN=n&mask;
 		}
 		else System.out.println("ERROR: Invalid change expected!");
 		{	// outputting the bit at ith position
 			System.out.println("After changing..");
 			mask=1<<i;	
-			if((new_n&mask)==0) System.out.println("The "+i+"th bit was: 0");
+			if((newN&mask)==0) System.out.println("The "+i+"th bit was: 0");
 			else System.out.println("The "+i+"th bit was: 1");
 		}
 
@@ -48,7 +48,11 @@ class Main{
 		int a=22, b=27;
 		// 1) How many different bits? > XOR
 		int temp=a^b;
-		// 2) How many set bits?
-		
+		// 2) How many set bits in temp?
+		int setBitsCounter=0;
+		while((n&(n-1))!=0) {
+			setBitsCounter++;
+			n=n&(n-1);
+		}
 	}
 }
