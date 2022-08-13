@@ -45,7 +45,7 @@ class Main{
 		int temp=res;
 		for(int a: arr1){
 			if((a&mask)==0) res^=a;
-			else if((a&mask)!=0) temp^=a;
+			else temp^=a;
 		}
 		System.out.println("The two numbers are: "+res+" and "+temp+".");
 
