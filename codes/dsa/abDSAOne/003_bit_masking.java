@@ -1,9 +1,10 @@
+import java.util.Scanner;
 class Main{
 	public static void main(String[] args){
-		int n=309;
-		int i=5; // counting from right.. starting with 0
+		int n=309, mask, i; // counting from right.. starting with 0
 	 	// finding ith bit in the binary for of the number
-		int mask=1<<i;	
+		i=5;
+		mask=1<<i;	
 		if((n&mask)==0) System.out.println("The "+i+"th bit was: 0");
 		else System.out.println("The "+i+"th bit was: 1");
 		// All the bits became 0, because of '&' with 0 and the one to be found
@@ -12,5 +13,27 @@ class Main{
 		// else it will be a non-zero number > thus it was 1
 
 		// Setting ith bit
+		Scanner s=new Scanner(System.in);
+		mask=1<<i;	
+		{
+			System.out.println("Before changing..");
+			if((n&mask)==0) System.out.println("The "+i+"th bit was: 0");
+			else System.out.println("The "+i+"th bit was: 1");
+		}
+		int change_to=s.nextInt(), new_n;
+		if(change_to==1){
+			mask=1<<i;
+			new_n=n|mask;
+		}
+		else if(change_to==0){
+			mask=~(1<<i);
+			new_n=n&mask;
+		}
+		else System.out.println("ERROR: Invalid change expected!");
+		{
+			System.out.println("After changing..");
+			if((n&mask)==0) System.out.println("The "+i+"th bit was: 0");
+			else System.out.println("The "+i+"th bit was: 1");
+		}
 	}
 }
