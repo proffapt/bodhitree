@@ -12,7 +12,7 @@ class Main{
 		// if it was 0 > 1&0=0 > whole number 0 > thus it was 0
 		// else it will be a non-zero number > thus it was 1
 
-		// Setting ith bit
+		// Setting and clearning ith bit
 		Scanner s=new Scanner(System.in);
 		System.out.print("Enter the to be changed position: ");
 		i=s.nextInt();
@@ -29,7 +29,7 @@ class Main{
 			new_n=n|mask;
 		}
 		else if(change_to==0){
-			mask=~(1<<i);
+			mask=~(1<<i); // visible logic
 			new_n=n&mask;
 		}
 		else System.out.println("ERROR: Invalid change expected!");
