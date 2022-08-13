@@ -34,11 +34,12 @@ class Main{
 		// they have 1 or 0 on their first bit of difference from the right.
 		// that is, find the right most set bit(right most 1 bit) in res.
 		// finding index of rightmost set bit
-		int mask=1, i;
-		for(i=0; i<=Math.log10(res); i++){
-			mask=1<<i;
-			if((res&mask)!=0) break;
-		}
+		// int mask=1, i;
+		// for(i=0; i<=Math.log10(res); i++){
+		// 	mask=1<<i;
+		// 	if((res&mask)!=0) break;
+		// }
+		int mask=res&(~res);
 		// separating out the arrays
 		// AND
 		// separating out the two numbers
