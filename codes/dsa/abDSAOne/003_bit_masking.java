@@ -2,7 +2,7 @@ import java.util.Scanner;
 class Main{
 	public static void main(String[] args){
 		int n=309, mask, i; // counting from right.. starting with 0
-	 	// finding ith bit in the binary for of the number
+	 	// finding ith bit in the binary form of the number
 		i=5;
 		mask=1<<i;	
 		if((n&mask)==0) System.out.println("The "+i+"th bit was: 0");
@@ -13,6 +13,10 @@ class Main{
 		// else it will be a non-zero number > thus it was 1
 
 		// Setting and clearning ith bit
+		/*
+		   Setting a bit => changing value to 1.
+		   Clearing a bit => changing value to 0.
+		*/
 		Scanner s=new Scanner(System.in);
 		System.out.print("Enter the to be changed position: ");
 		i=s.nextInt();
@@ -39,5 +43,12 @@ class Main{
 			if((new_n&mask)==0) System.out.println("The "+i+"th bit was: 0");
 			else System.out.println("The "+i+"th bit was: 1");
 		}
+
+		// Finding number of bits we need to change to convert from a to b:
+		int a=22, b=27;
+		// 1) How many different bits? > XOR
+		int temp=a^b;
+		// 2) How many set bits?
+		
 	}
 }
