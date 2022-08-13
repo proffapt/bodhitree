@@ -49,7 +49,7 @@ class Main{
 		/*
 		   Find the only non-repeating element in an array where every element is repeating 3 times.
 		*/
-		int arr2[]={2, 2, 1, 5, 1, 1, 2};
+		int arr2[]={2, 2, 1, 5, 1, 1, 2, 3 ,3 , 3};
 		int[] bit32=new int[32];
 		for(int i=0; i<32; i++){
 			mask=1<<i;
