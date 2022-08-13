@@ -50,7 +50,7 @@ class Main{
 		int temp=a^b;
 		// 2) How many set bits in temp?
 		int setBitsCounter=0;
-		while((n&(n-1))!=0) {
+		while((temp&(temp-1))!=0) {
 			setBitsCounter++;
 			n=n&(n-1);
 		}
