@@ -7,6 +7,7 @@ import java.io.*;
 class Main{
 	public static void main(String[] args){
 		// One application was for finding how many bits to change to change a number to other.	
+
 		// TWO:
 		/*
 			Find the only non-repeating element in an array where every element repeats twice.
@@ -21,6 +22,8 @@ class Main{
 		// Doing it the java way
 		for(int i: arr) res^=i; // will yield res=3 -> the answer
 		System.out.println("The unique number is: "+res);
+
+		// THREE:
 		/*
 			Find the two non-repeating elements in an array where every element repeats twice.
 		*/
@@ -33,8 +36,10 @@ class Main{
 		// finding index of rightmost set bit
 		int mask=1, i;
 		for(i=0; (res&mask)!=0; i++) mask=1<<i;
-		i=0;
-		mask=1<<i;
+		for(i=0; i<=Math.log10(res); i++){
+			mask=1<<i;
+			if((res&mask)!=0) break;
+		}
 		// separating out the arrays
 		int p=0, q=0;
 		int arr11[]=new int[arr1.length];
