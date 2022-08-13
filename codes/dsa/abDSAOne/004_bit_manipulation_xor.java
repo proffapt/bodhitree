@@ -58,5 +58,9 @@ class Main{
 			}
 		}
 		for(int a: bit32) System.out.print(a);
+		int decimal=0;
+		for(int i=0; i<32; i++)
+			decimal+=(bit32[i]*Math.pow(2, i));
+		System.out.println("The unique number is: "+decimal);
 	}
 }
