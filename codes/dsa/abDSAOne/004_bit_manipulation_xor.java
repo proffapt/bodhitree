@@ -36,10 +36,10 @@ class Main{
 		// finding index of rightmost set bit
 		int mask=1, i;
 		for(i=0; (res&mask)!=0; i++) mask=1<<i;
-		for(i=0; i<=Math.log10(res); i++){
-			mask=1<<i;
-			if((res&mask)!=0) break;
-		}
+		// for(i=0; i<=Math.log10(res); i++){
+		// 	mask=1<<i;
+		// 	if((res&mask)!=0) break;
+		// }
 		// separating out the arrays
 		int p=0, q=0;
 		int arr11[]=new int[arr1.length];
