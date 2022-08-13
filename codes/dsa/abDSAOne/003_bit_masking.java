@@ -54,6 +54,7 @@ class Main{
 			setBitsCounter++;
 			temp=temp&(temp-1);
 		}
+		if(a!=b)setBitsCounter++;
 		System.out.println("You need to change "+setBitsCounter+" bits for the conversion to take place.");
 	}
 }
