@@ -52,7 +52,7 @@ class Main{
 		int setBitsCounter=0;
 		while((temp&(temp-1))!=0) {
 			setBitsCounter++;
-			n=n&(n-1);
+			temp=temp&(temp-1);
 		}
 		System.out.println("You need to change "+setBitsCounter+" bits for the conversion to take place.");
 	}
