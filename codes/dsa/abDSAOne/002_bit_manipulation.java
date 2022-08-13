@@ -1,9 +1,9 @@
 class Main{
 	public static void main(String[] args){
 		// finding odd / even	
-		// int n=13;
-		// if (n&1==0) System.out.println("Even");
-		// else System.out.println("Odd");
+		int n=13;
+		if ((n&1)==0) System.out.println("Even");
+		else System.out.println("Odd");
 
 		// swapping two numbers
 		int a=5, b=7;
