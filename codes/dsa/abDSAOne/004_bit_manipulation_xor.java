@@ -37,7 +37,8 @@ class Main{
 		mask=1<<i;
 		// separating out the arrays
 		int p=0, q=0;
-		int[] arr11={}, arr12={};
+		int arr11[]=new int[arr1.length];
+		int arr12[]=new int[arr1.length];
 		for(int a: arr1){
 			if((a&mask)==0) arr11[p++]=a;
 			else if((a&mask)!=0) arr12[q++]=a;
