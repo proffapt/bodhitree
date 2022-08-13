@@ -54,7 +54,7 @@ class Main{
 		for(int i=31; i>=0; i--){
 			mask=1<<i;
 			for(int a: arr2){
-				if((a&mask)!=0) bit32[i]=(bit32[i]++)%3;
+				if((a&mask)!=0) bit32[i]=(bit32[i]+1)%3;
 			}
 		}
 		for(int a: bit32) System.out.print(a+" ");
