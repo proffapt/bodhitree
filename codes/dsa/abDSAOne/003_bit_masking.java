@@ -45,15 +45,15 @@ class Main{
 		}
 
 		// Finding number of bits we need to change to convert from a to b:
-		int a=22, b=27;
+		int a=22, b=22;
 		// 1) How many different bits? > XOR
 		int temp=a^b;
 		// 2) How many set bits in temp?
 		int setBitsCounter=0;
-		do{
+		while((temp&(temp-1))!=0) {
 			setBitsCounter++;
 			temp=temp&(temp-1);
-		} while((temp&(temp-1))!=0);
+		}
 		System.out.println("You need to change "+setBitsCounter+" bits for the conversion to take place.");
 	}
 }
