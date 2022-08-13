@@ -23,7 +23,7 @@ class Main{
 			else System.out.println("The "+i+"th bit was: 1");
 		}
 		System.out.print("Enter the value to be changed to: ");
-		int change_to=s.nextInt(), new_n;
+		int change_to=s.nextInt(), new_n=-1;
 		if(change_to==1){
 			mask=1<<i;
 			new_n=n|mask;
@@ -36,7 +36,7 @@ class Main{
 		{	// outputting the bit at ith position
 			System.out.println("After changing..");
 			mask=1<<i;	
-			if((n&mask)==0) System.out.println("The "+i+"th bit was: 0");
+			if((new_n&mask)==0) System.out.println("The "+i+"th bit was: 0");
 			else System.out.println("The "+i+"th bit was: 1");
 		}
 	}
