@@ -55,6 +55,7 @@ class Main{
 			temp=temp&(temp-1);
 		}
 		if(a!=b)setBitsCounter++;
+		// has a time complexity of only the number of bits needed to be changed.. most optimal solution!
 		System.out.println("You need to change "+setBitsCounter+" bits for the conversion to take place.");
 	}
 }
