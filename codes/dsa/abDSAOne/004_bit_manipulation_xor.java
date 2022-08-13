@@ -39,7 +39,7 @@ class Main{
 		// 	mask=1<<i;
 		// 	if((res&mask)!=0) break;
 		// }
-		int mask=res&(~res);
+		int mask=res&(~(res-1));
 		// separating out the arrays
 		// AND
 		// separating out the two numbers
