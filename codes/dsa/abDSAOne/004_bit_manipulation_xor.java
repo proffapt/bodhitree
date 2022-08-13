@@ -10,7 +10,7 @@ class Main{
 		/*
 			Find the only non-repeating element in an array where every element repeats twice.
 		*/
-		int arr[]={5, 4, 1, 4, 3, 5, 1};
+		int[] arr={5, 4, 1, 4, 3, 5, 1};
 		int res=0;
 		/*
 		for(int i=0; i<arr.length; i++){
@@ -20,5 +20,8 @@ class Main{
 		// Doing it the java way
 		for(int i: arr) res^=i;
 		System.out.println("The unique number is: "+res);
+		/*
+			Find the two non-repeating elements in an array where every element repeats twice.
+		*/
 	}
 }
