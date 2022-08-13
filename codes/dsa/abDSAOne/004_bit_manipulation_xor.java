@@ -34,12 +34,7 @@ class Main{
 		// they have 1 or 0 on their first bit of difference from the right.
 		// that is, find the right most set bit(right most 1 bit) in res.
 		// finding index of rightmost set bit
-		// int mask=1, i;
-		// for(i=0; i<=Math.log10(res); i++){
-		// 	mask=1<<i;
-		// 	if((res&mask)!=0) break;
-		// }
-		int mask=res&(~(res-1));
+		int mask=res&(~(res-1)); // All bits are cleared except the right most set bit.
 		// separating out the arrays
 		// AND
 		// separating out the two numbers
@@ -54,5 +49,8 @@ class Main{
 		/*
 		   Find the only non-repeating element in an array where every element is repeating 3 times.
 		*/
+		int arr2[]={2, 2, 1, 5, 1, 1, 2};
+		int[] bit32=new int[32];
+		System.out.println(bit32[3]);	
 	}
 }
