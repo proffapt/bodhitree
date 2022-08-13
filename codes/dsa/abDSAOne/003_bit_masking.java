@@ -50,10 +50,10 @@ class Main{
 		int temp=a^b;
 		// 2) How many set bits in temp?
 		int setBitsCounter=0;
-		while((temp&(temp-1))!=0) {
+		do{
 			setBitsCounter++;
 			temp=temp&(temp-1);
-		}
+		} while((temp&(temp-1))!=0);
 		System.out.println("You need to change "+setBitsCounter+" bits for the conversion to take place.");
 	}
 }
