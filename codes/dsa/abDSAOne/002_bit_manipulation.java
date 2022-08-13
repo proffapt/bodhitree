@@ -1,3 +1,10 @@
+// Some theory on bit and decimal conversion
+/*
+	- During bit to decimal conversion
+		Number of decimal digits = log10(n)+1
+	- During decimal to bit conversion
+		Number of bits = log2(n)+1
+*/
 class Main{
 	public static void main(String[] args){
 		// finding odd / even	
