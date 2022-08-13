@@ -57,7 +57,6 @@ class Main{
 				if((a&mask)!=0) bit32[i]=(bit32[i]+1)%3;
 			}
 		}
-		for(int a: bit32) System.out.print(a);
 		int decimal=0;
 		for(int i=0; i<32; i++)
 			decimal+=(bit32[i]*Math.pow(2, i));
