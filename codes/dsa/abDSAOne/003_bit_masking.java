@@ -54,5 +54,6 @@ class Main{
 			setBitsCounter++;
 			n=n&(n-1);
 		}
+		System.out.println("You need to change "+setBitsCounter+" bits for the conversion to take place.");
 	}
 }
