@@ -8,11 +8,11 @@ class Main{
 		// swapping two numbers
 		int a=5, b=7;
 		System.out.println("Before swapping");
-		System.out.println("a="+a+"and b="+b);
+		System.out.println("a="+a+" and b="+b);
 		a=a^b;
 		b=a^b;
 		a=a^b;
 		System.out.println("After swapping");
-		System.out.println("a="+a+"and b="+b);
+		System.out.println("a="+a+" and b="+b);
 	}
 }
