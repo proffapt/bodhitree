@@ -14,16 +14,16 @@ class Main{
 
 		// Setting ith bit
 		Scanner s=new Scanner(System.in);
-		System.out.println("Enter the to be changed position: ");
+		System.out.print("Enter the to be changed position: ");
 		i=s.nextInt();
-		System.out.println("Enter the value to be changed to: ");
-		int change_to=s.nextInt(), new_n;
 		{	// outputting the bit at ith position
 			System.out.println("Before changing..");
 			mask=1<<i;	
 			if((n&mask)==0) System.out.println("The "+i+"th bit was: 0");
 			else System.out.println("The "+i+"th bit was: 1");
 		}
+		System.out.print("Enter the value to be changed to: ");
+		int change_to=s.nextInt(), new_n;
 		if(change_to==1){
 			mask=1<<i;
 			new_n=n|mask;
