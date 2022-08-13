@@ -13,6 +13,7 @@ class Main{
 			Find the only non-repeating element in an array where every element repeats twice.
 		*/
 		int[] arr={5, 4, 1, 4, 3, 5, 1};
+		for(int i: arr) System.out.print(i+"");
 		int res=0;
 		/*
 		for(int i=0; i<arr.length; i++){
@@ -28,6 +29,7 @@ class Main{
 			Find the two non-repeating elements in an array where every element repeats twice.
 		*/
 		int[] arr1={5, 4, 1, 4, 3, 5, 1, 2};
+		for(int i: arr1) System.out.print(i+"");
 		res=0;
 		for(int i: arr1) res^=i; // will yield res=3^2
 		// now have to separate the array into two parts; based on the logic that..
@@ -50,6 +52,7 @@ class Main{
 		   Find the only non-repeating element in an array where every element is repeating 3 times.
 		*/
 		int arr2[]={2, 2, 1, 5, 1, 1, 2, 3 ,3 , 3};
+		for(int i: arr2) System.out.print(i+"");
 		int[] bit32=new int[32];
 		for(int i=0; i<32; i++){
 			mask=1<<i;
