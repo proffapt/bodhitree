@@ -53,9 +53,8 @@ class Main{
 		int[] bit32=new int[32];
 		for(int i=0; i<32; i++){
 			mask=1<<i;
-			for(int a: arr2){
+			for(int a: arr2)
 				if((a&mask)!=0) bit32[i]=(bit32[i]+1)%3;
-			}
 		}
 		int decimal=0;
 		for(int i=0; i<32; i++)
