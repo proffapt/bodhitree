@@ -1,7 +1,7 @@
 class Main{
 	public static void main(String[] args){
 		// finding odd / even	
-		int n=12;
+		int n=13;
 		if ((n&1)==0) System.out.println("Even");
 		else System.out.println("Odd");
 
