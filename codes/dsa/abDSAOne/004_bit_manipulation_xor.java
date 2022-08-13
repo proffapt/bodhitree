@@ -40,17 +40,18 @@ class Main{
 			if((res&mask)!=0) break;
 		}
 		// separating out the arrays
-		int p=0, q=0;
-		int arr11[]=new int[arr1.length];
-		int arr12[]=new int[arr1.length];
-		for(int a: arr1){
-			if((a&mask)==0) arr11[p++]=a;
-			else if((a&mask)!=0) arr12[q++]=a;
-		}
+		// AND
 		// separating out the two numbers
 		int temp=res;
-		for(int a: arr11) res^=a;
-		for(int a: arr12) temp^=a;
+		for(int a: arr1){
+			if((a&mask)==0) res^=a;
+			else if((a&mask)!=0) temp^=a;
+		}
 		System.out.println("The two numbers are: "+res+" and "+temp+".");
+
+		// FOUR:
+		/*
+		   Find the only non-repeating element in an array where every element is repeating 3 times.
+		*/
 	}
 }
