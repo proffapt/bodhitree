@@ -30,8 +30,21 @@ class Main{
 		// now have to separate the array into two parts; based on the logic that..
 		// they have 1 or 0 on their first bit of difference from the right.
 		// that is, find the right most set bit(right most 1 bit) in res.
+		// finding index of rightmost set bit
 		int mask=1, i;
 		for(i=0; (res&mask)!=0; i++) mask=1<<i;
-		System.out.println(i);
+		i=0;
+		// separating out the arrays
+		int p=0, q=0;
+		int[] arr11={}, arr12={};
+		for(int a: arr1){
+			if((a&mask)==0) arr11[p++]=a;
+			else if((a&mask)!=0) arr12[q++]=a;
+		}
+		// separating out the two numbers
+		int temp=res;
+		for(int a: arr11) res^=a;
+		for(int a: arr12) temp^=a;
+		System.out.println("The two numbers are: "+res+" and "+temp+".");
 	}
 }
