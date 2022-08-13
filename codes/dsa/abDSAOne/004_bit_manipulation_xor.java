@@ -51,6 +51,9 @@ class Main{
 		*/
 		int arr2[]={2, 2, 1, 5, 1, 1, 2};
 		int[] bit32=new int[32];
-		System.out.println(bit32[3]);	
+		for(int i=0; i<32; i++)
+			for(int a: arr2){
+				if((a&mask)!=0) bit32[i]=(bit32[i]+1)%3;
+			}
 	}
 }
