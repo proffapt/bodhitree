@@ -2,6 +2,42 @@
 <html>
 	<head>
 		<title>First Webpage</title>
+		<style>
+			.subscribe-button {
+				background-color: rgb(200, 0, 0);
+				color: white;
+				border: none;
+				height: 36px;
+				width: 105px;
+				cursor: pointer;
+				border-radius: 2px;
+				margin-right: 8px;
+			}	
+
+			.join-button{
+				background-color: white;
+				border-radius: 2px;
+				border-color: rgb(41, 118, 211);
+				border-style: solid;
+				border-width: 1px;
+				color: rgb(41, 118, 211);
+				height: 36px;
+				width: 60px;
+				cursor: pointer;
+			}
+
+			.tweet-button{
+				margin-left: 8px;
+				background-color: rgb(2, 158, 255);
+				height: 36px;
+				width: 74px;
+				border-radius: 18px;
+				border: none;
+				cursor: pointer;
+				color: white;
+				font-weight: bold;
+			}
+		</style>
 		<!-- contains non visible part of the website. -->
 	</head>
 	<body>
@@ -18,7 +54,9 @@
 		<a href="https://www.youtube.com/" target="_blank">Link to youtube.. opens in different tab</a>
 
 		<h1># 002</h1>
-		
+		<button class="subscribe-button">SUBSCRIBE</button>
+		<button class="join-button">JOIN</button>
+		<button class="tweet-button">Tweet</button>
 		<!-- Contains visible part of the website. -->
 	</body>
 </html>
