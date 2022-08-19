@@ -38,6 +38,70 @@
 				font-weight: bold;
 			}
 		</style>
+		<style>
+			.subscribe-button {
+				background-color: rgb(200, 0, 0);
+				color: white;
+				border: none;
+				height: 36px;
+				width: 105px;
+				cursor: pointer;
+				border-radius: 2px;
+				margin-right: 8px;
+				transition: opacity 0.15s;
+			}	
+
+			.subscribe-button:hover {
+				opacity: 0.7;
+			}
+
+			.subscribe-button:active {
+				opacity: 0.5;
+			}
+
+			.join-button{
+				background-color: white;
+				border-radius: 2px;
+				border-color: rgb(41, 118, 211);
+				border-style: solid;
+				border-width: 1px;
+				color: rgb(41, 118, 211);
+				height: 36px;
+				width: 60px;
+				cursor: pointer;
+				transition: background-color 0.15s, color 0.15s;
+			}
+			
+			.join-button:hover {
+				<!-- putting transition property inside pseudo class will only bring it in action when that --> 
+				<!-- pseudo behaviour begins but not when it ends; so it's good practice to keep it in the base class -->
+				background-color: rgb(41, 118, 211);
+				color: white;
+			}
+
+			.join-button:active {
+				opacity: 0.7;
+				<!-- this property takes action from the very last immediate propeerty before being active which was hover. -->
+			}
+
+			.tweet-button{
+				margin-left: 8px;
+				background-color: rgb(2, 158, 255);
+				height: 36px;
+				width: 74px;
+				border-radius: 18px;
+				border: none;
+				cursor: pointer;
+				color: white;
+				font-weight: bold;
+				transition: box-shadow 0.15s;
+			}
+
+			.tweet-button:hover{
+				box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+			}
+		</style>
+
 		<!-- contains non visible part of the website. -->
 	</head>
 	<body>
@@ -54,6 +118,11 @@
 		<a href="https://www.youtube.com/" target="_blank">Link to youtube.. opens in different tab</a>
 
 		<h1># 002</h1>
+		<button class="subscribe-button">SUBSCRIBE</button>
+		<button class="join-button">JOIN</button>
+		<button class="tweet-button">Tweet</button>
+
+		<h1># 003</h1>
 		<button class="subscribe-button">SUBSCRIBE</button>
 		<button class="join-button">JOIN</button>
 		<button class="tweet-button">Tweet</button>
