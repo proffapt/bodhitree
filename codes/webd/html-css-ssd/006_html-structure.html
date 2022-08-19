@@ -71,7 +71,63 @@
 				box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
 			}
 		</style>
+		<style>
+			p {
+				font-family: Arial;
+				margin-top: 0;
+				margin-bottom: 0;
+				<!-- css selector which is more specific has more priority.. this is called specificity. -->
+			}
 
+			.google-text-title{
+				font-weight: bold;
+				font-size: 18px;
+				width: 280px;
+				line-height: 24px;
+				margin-bottom: 2px;
+			}
+
+			.google-text-stats {
+				font-size: 14px;
+				color: rgb(96, 96, 96);
+				margin-bottom: 16px;
+			}
+			
+			.google-text-author {
+				font-size: 14px;
+				color: rgb(96, 96, 96);
+				margin-bottom: 16px;
+			}
+			
+			.google-text {
+				font-size: 14px;
+				color: rgb(96, 96, 96);
+				width: 270px;
+				line-height: 20px;
+				margin-bottom: 100px;
+			}
+
+			.apple-text {
+				font-size: 14px;
+				background-color: rgb(227, 65, 64);
+				color: white;
+				padding: 16px;
+				border: none;
+				text-align: center;
+				margin-left: 2px;
+				margin-right: 2px;
+				margin-bottom: 16px;
+			}
+
+			.shop-now:hover {
+				text-decoration: underline;
+				cursor: pointer;
+			}
+
+			.multiple-spaces{
+				margin-left: 16px;
+			}
+		</style>
 		<!-- contains non visible part of the website. -->
 	</head>
 	<body>
@@ -91,6 +147,15 @@
 		<button class="subscribe-button">SUBSCRIBE</button>
 		<button class="join-button">JOIN</button>
 		<button class="tweet-button">Tweet</button>
+
+		<h1># 005</h1>
+
+		<p class="google-text-title">Talking Tech and AI with Google CEO Sundar Pichai!</p>
+		<p class="google-text-stats">3.4M views &#183; 6 months ago</p>
+		<p class="google-text-author">Marques Brownlee &#10003;</p>
+		<p class="google-text">Talking tech and AI on the heels of Google I/O. Also a daily driver phone reveal from Google's CEO. Shoutout to Sundar!</p>
+		<p class="apple-text">Shop early for the best selection of holiday favourites. <span class="shop-now">Shop now &#62;</span></p>
+		<p>multiple <span class="multiple-spaces">spaces</span></p>
 		
 		<!-- Contains visible part of the website. -->
 	</body>
