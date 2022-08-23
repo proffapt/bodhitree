@@ -3,7 +3,6 @@
 	a^a=0
 	0^b=b
 */
-import java.io.*;
 class Main{
 	public static void main(String[] args){
 		// One application was for finding how many bits to change to change a number to other.	
