@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"strconv"
 )
 
 func main() {
@@ -13,4 +14,12 @@ func main() {
 	rating, _ := reader.ReadString('\n')
 
 	fmt.Print("Thanks for rating my profile, ", rating)
+
+	// numRating := rating+1 --> it's all good, but what if we get an error? How will you handle it?
+	numRating, err := strconv.ParseInt(rating, 64)+1
+	if err != nil {
+		panic(err)
+	} else {
+		fmt.Print("Thanks for rating my profile, ", numRating)
+	}
 }
