@@ -13,5 +13,5 @@ func main() {
 	fmt.Print("Enter the rating for my github page:")
 	input, _ := reader.ReadString('\n')
 
-	fmt.Println("You gave us rating of ", input)
+	fmt.Println("You gave us rating of ",input)
 }
