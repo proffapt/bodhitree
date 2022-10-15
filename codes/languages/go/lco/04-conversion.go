@@ -16,7 +16,7 @@ func main() {
 	fmt.Print("Thanks for rating my profile, ", rating)
 
 	// numRating := rating+1 --> it's all good, but what if we get an error? How will you handle it?
-	numRating, err := strconv.ParseInt(rating, 64)+1
+	numRating, err := strconv.ParseInt(rating, 2,64)+1
 	if err != nil {
 		panic(err)
 	} else {
