@@ -33,7 +33,7 @@ func main() {
 	fmt.Printf("Variable is of type: %T\n", website)
 
 	// no var style
-	users := 3
+	users := 3 // not allowed outside any method Like global and stuff
 	fmt.Println(users)
 	fmt.Printf("Variable is of type: %T\n", users)
 }
