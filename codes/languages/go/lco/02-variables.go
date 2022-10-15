@@ -26,4 +26,8 @@ func main() {
 	var test int
 	fmt.Println(test)
 	fmt.Printf("Variable is of type: %T\n", test)
+
+	// implicit method of declaration
+	var website = "proffapt.me" // here comes lexer and adds the Type judging from the initialised value
+	fmt.Println(website)
 }
