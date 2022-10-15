@@ -10,8 +10,8 @@ func main() {
 	// creating the reference to our reader
 	reader := bufio.NewReader(os.Stdin)
 
-	fmt.Print("Enter the rating for my github page:")
+	fmt.Print("Enter the rating for my github page: ")
 	input, _ := reader.ReadString('\n')
 
-	fmt.Println("You gave us rating of ",input)
+	fmt.Println("You gave us rating of ", input)
 }
