@@ -31,4 +31,8 @@ func main() {
 	var website = "proffapt.me" // here comes lexer and adds the Type judging from the initialised value
 	fmt.Println(website)
 	fmt.Printf("Variable is of type: %T\n", website)
+
+	// no var style
+	users := 3
+	fmt.Println(users)
 }
