@@ -22,4 +22,8 @@ func main() {
 	var largeFloat float64 = 255.2342342
 	fmt.Println(largeFloat)
 	fmt.Printf("Variable is of type: %T\n", largeFloat)
+
+	var test int
+	fmt.Println(test)
+	fmt.Printf("Variable is of type: %T\n", test)
 }
