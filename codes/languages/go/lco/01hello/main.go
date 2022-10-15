@@ -1,5 +1,5 @@
 package main
 
 func main() {
-	fmt.Println("Hewoo pwepole")
+	fmt.Println("Hewoo pweople")
 }
