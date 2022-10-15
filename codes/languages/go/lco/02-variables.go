@@ -2,6 +2,8 @@ package main
 
 import "fmt"
 
+const LoginToken string = "adfjal879qeojalkfjasdfada8du7f9q"
+
 func main() {
 	var username string = "proffapt"
 	fmt.Println(username)
