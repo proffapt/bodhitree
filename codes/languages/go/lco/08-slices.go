@@ -17,5 +17,6 @@ func main() {
 	// appending
 	ms = append(ms, 5, 6)
 	fmt.Println(ms)
-	fmt.Println(ms[4])
+	ms[6] = 7
+	fmt.Println(ms)
 }
