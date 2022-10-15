@@ -13,4 +13,5 @@ func main() {
 	// |
 	// ---> all of the above are valid syntaxes
 	fmt.Println("Value of numPtr is ", numPtr)
+	fmt.Println("Value stored in the memory of numPtr is ", *numPtr)
 }
