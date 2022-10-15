@@ -4,5 +4,9 @@ import "fmt"
 
 func main() {
 	var ptr *int
-	fmt.Println(ptr)
+	fmt.Println("Default value of pointer is ", ptr)
+
+	var number = 3
+	numPtr := &number
+	fmt.Println("Value of numPtr is ", numPtr)
 }
