@@ -9,7 +9,7 @@ func main() {
 	currentTime := time.Now()
 	fmt.Println(currentTime)
 	fmtdCurrentTime := currentTime.Format("Monday 01/02/2006 15:04:05")
-	fmt.Print(fmtdCurrentTime)
+	fmt.Println(fmtdCurrentTime)
 
 	myDate := time.Date(2021, time.August, 11, 23, 4, 9, 0, time.UTC)
 	fmt.Print(myDate)
