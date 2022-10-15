@@ -3,6 +3,7 @@ package main
 import "fmt"
 
 func main() {
+	// Declaration
 	var array [4]string
 	array[0] = "apple"
 	array[1] = "microsoft"
@@ -12,6 +13,7 @@ func main() {
 	fmt.Println(array)
 	fmt.Println(len(array))
 
+	// Initialisation
 	var myArray = [3]string{"fuck", "your", "momma"}
 	fmt.Println(myArray)
 }
