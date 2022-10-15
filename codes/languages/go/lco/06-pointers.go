@@ -7,7 +7,10 @@ func main() {
 	fmt.Println("Default value of pointer is ", ptr)
 
 	var number = 3
-	// numPtr := &number
-	var numPtr = &number
+	numPtr := &number
+	// var numPtr = &number
+	// var numptr *int = &number
+	// |
+	// ---> all of the above are valid syntaxes
 	fmt.Println("Value of numPtr is ", numPtr)
 }
