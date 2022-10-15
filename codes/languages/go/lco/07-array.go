@@ -9,5 +9,6 @@ func main() {
 	array[2] = "samsung"
 	array[3] = "tesla"
 
+	fmt.Println(array[3])
 	fmt.Println(array)
 }
