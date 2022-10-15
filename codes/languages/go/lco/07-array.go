@@ -11,4 +11,5 @@ func main() {
 
 	fmt.Println(array[3])
 	fmt.Println(array)
+	fmt.Println(len(array))
 }
