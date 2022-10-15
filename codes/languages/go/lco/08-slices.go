@@ -4,6 +4,7 @@ import "fmt"
 
 func main() {
 	// arrays without size-declration are slices
+	// ** Syntax 1
 	ms := []int{1, 2, 3, 4}
 	// can also be done using
 	/*
