@@ -35,4 +35,5 @@ func main() {
 	// no var style
 	users := 3
 	fmt.Println(users)
+	fmt.Printf("Variable is of type: %T\n", users)
 }
