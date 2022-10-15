@@ -17,6 +17,9 @@ func main() {
 	// appending
 	ms = append(ms, 5, 6)
 	fmt.Println(ms)
-	ms[6] = 7
+	// ms[6] = 7
+	// fmt.Println(ms)
+	// ^ This will give error, only append will help you with that
+	ms[5] = 7
 	fmt.Println(ms)
 }
