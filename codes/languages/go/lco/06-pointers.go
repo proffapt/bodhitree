@@ -7,6 +7,7 @@ func main() {
 	fmt.Println("Default value of pointer is ", ptr)
 
 	var number = 3
-	numPtr := &number
+	// numPtr := &number
+	var numPtr = &number
 	fmt.Println("Value of numPtr is ", numPtr)
 }
