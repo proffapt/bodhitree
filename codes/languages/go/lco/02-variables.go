@@ -2,6 +2,8 @@ package main
 
 import "fmt"
 
+// Capital letter to this variable has significant importance here
+// --> It is declaring it as Public variable.
 const LoginToken string = "adfjal879qeojalkfjasdfada8du7f9q"
 
 func main() {
@@ -38,4 +40,8 @@ func main() {
 	users := 3 // not allowed outside any method Like global and stuff
 	fmt.Println(users)
 	fmt.Printf("Variable is of type: %T\n", users)
+
+
+	fmt.Println(LoginToken)
+	fmt.Printf("Variable is of type: %T\n", LoginToken)
 }
