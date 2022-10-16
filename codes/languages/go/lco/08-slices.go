@@ -83,4 +83,6 @@ func main() {
 	sort.Ints(slice) // --> Sorts a slice of ints in increasing order
 	fmt.Println(slice)
 	fmt.Println(sort.IntsAreSorted(slice))
+
+	// Deleting a value from slice
 }
