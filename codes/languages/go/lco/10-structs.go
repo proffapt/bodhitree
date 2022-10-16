@@ -20,6 +20,6 @@ func main() {
 
 	// for individual stuff
 	fmt.Printf("%v\n", proffapt.Age)
-	fmt.Printf("%+v\n", proffapt.Name)
+	fmt.Printf("%+v\n", proffapt.Name) // -->> To note, it is same like earlier
 	fmt.Println(proffapt.Email)
 }
