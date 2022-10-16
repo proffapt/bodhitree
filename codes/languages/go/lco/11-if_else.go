@@ -24,4 +24,5 @@ func main() {
 	if logincount := 96; logincount == 96 {
 		result = "You have acquired a holy state"
 	}
+	fmt.Println(result)
 }
