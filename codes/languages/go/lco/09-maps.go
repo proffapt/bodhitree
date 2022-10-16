@@ -10,4 +10,8 @@ func main() {
 	languages["java"] = "java"
 
 	fmt.Println(languages)
+	
+	// deleting an entry
+	delete(languages, "py")
+	fmt.Println(languages)
 }
