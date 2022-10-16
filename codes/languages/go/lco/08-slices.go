@@ -81,6 +81,6 @@ func main() {
 	fmt.Println(slice)
 	fmt.Println(sort.IntsAreSorted(slice))
 	sort.Ints(slice) // --> Sorts a slice of ints in increasing order
-	fmt.Println(sort.IntsAreSorted(slice))
 	fmt.Println(slice)
+	fmt.Println(sort.IntsAreSorted(slice))
 }
