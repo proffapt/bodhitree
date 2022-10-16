@@ -79,7 +79,8 @@ func main() {
 		 --> Lot of optimisations happens because of this.
 	*/
 	fmt.Println(slice)
-
+	sort.IntsAreSorted(slice)
 	sort.Ints(slice) // --> Sorts a slice of ints in increasing order
+	sort.IntsAreSorted(slice)
 	fmt.Println(slice)
 }
