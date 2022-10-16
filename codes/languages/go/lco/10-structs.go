@@ -15,6 +15,6 @@ func main() {
 	fmt.Println(proffapt)
 
 	// for more detailed output
-	fmt.Printf("%v", proffapt)
-	fmt.Printf("%+v", proffapt)
+	fmt.Printf("%v\n", proffapt)
+	fmt.Printf("%+v\n", proffapt)
 }
