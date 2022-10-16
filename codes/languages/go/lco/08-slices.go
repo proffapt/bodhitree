@@ -85,4 +85,6 @@ func main() {
 	fmt.Println(sort.IntsAreSorted(slice))
 
 	// Deleting a value from slice
+	slice = append(slice[:2], slice[3:]...) // --> removes the element in 2nd index
+	fmt.Println(slice)
 }
