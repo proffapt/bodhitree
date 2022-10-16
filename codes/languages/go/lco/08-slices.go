@@ -66,6 +66,13 @@ func main() {
 	slice[2]=3
 	slice[3]=4
 	fmt.Println(slice)
-	slice = append(slice, 5)
+	slice = append(slice, 5) 
+	/*
+		Here's what's make it better and different from an array!
+		because everything other than it was similar to an array.
+
+		Some words about appending to DA-slice ( I named it Dynamically Allocated Slice )
+		- Reallocation of memory is done so that all of the values can be accomodated.
+	*/
 	fmt.Println(slice)
 }
