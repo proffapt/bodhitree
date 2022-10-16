@@ -85,5 +85,4 @@ func main() {
 	fmt.Println(sort.IntsAreSorted(slice))
 
 	// Deleting a value from slice
-
 }
