@@ -4,6 +4,7 @@ import "fmt"
 
 // Syntax of struct 
 type User struct { // FOCUS ON "User" that capital U has an importance, it means this struct User is publicly avaialable to use
+	// below have same capital letter, which carry the same meaning.
 	Name string
 	Email string
 	Verified bool
