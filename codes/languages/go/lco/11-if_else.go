@@ -21,6 +21,7 @@ func main() {
 	fmt.Println(result)
 
 	// alternate way, the go wayyy
+	// useful when we put the web request's output in a variable and simultaneously check and decide our actions on the go
 	if logincount := 96; logincount == 96 {
 		result = "You have acquired a holy state"
 	}
