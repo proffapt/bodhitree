@@ -19,6 +19,6 @@ func main() {
 	fmt.Printf("%+v\n", proffapt)
 
 	// for individual stuff
-	fmt.Printf("%v", proffapt.Age)
+	fmt.Printf("%v ", proffapt.Age)
 	fmt.Println(proffapt.Email)
 }
