@@ -13,4 +13,7 @@ type User struct { // FOCUS ON "User" that capital U has an importance, it means
 func main() {
 	proffapt := User{"Arpit", "proffapt@pm.me", true, 20}
 	fmt.Println(proffapt)
+
+	// for more detailed output
+	fmt.Printf("%+v", proffapt)
 }
