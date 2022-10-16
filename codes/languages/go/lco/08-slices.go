@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
 func main() {
 	// arrays without size-declration are slices
@@ -75,5 +78,8 @@ func main() {
 		- Reallocation of memory is done so that all of the values can be accomodated.
 		 --> Lot of optimisations happens because of this.
 	*/
+	fmt.Println(slice)
+
+	sort.Ints(slice) // --> Sorts a slice of ints in increasing order
 	fmt.Println(slice)
 }
