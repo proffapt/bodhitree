@@ -73,6 +73,7 @@ func main() {
 
 		Some words about appending to DA-slice ( I named it Dynamically Allocated Slice )
 		- Reallocation of memory is done so that all of the values can be accomodated.
+		 --> Lot of optimisations happens because of this.
 	*/
 	fmt.Println(slice)
 }
