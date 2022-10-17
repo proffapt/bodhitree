@@ -19,7 +19,9 @@ func main() {
 	defer file.Close() // VERY VERY IMPORTANT, defered so that I don't forget it later on
 	fmt.Printf("Type of 'file': %T", file)
 
-	ioutil.ReadFile(filepath)
+	databyte, err := ioutil.ReadFile(filepath)
+	checkNilError(err)
+	fmt.Printf("Type of 'databyte': %T", databyte)
 }
 
 func checkNilError(err error){
