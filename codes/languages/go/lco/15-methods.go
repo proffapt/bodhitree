@@ -10,7 +10,13 @@ type User struct {
 	Age int
 }
 
+// umm functions connected to structs are called methods
+// This is the basic declration
+func (u User) getdata(){
+	fmt.Println(u)
+}
+
 func main() {
 	proffapt := User{"Arpit", "proffapt@pm.me", true, 20}
-	fmt.Println(proffapt)
+	proffapt.getdata()
 }
