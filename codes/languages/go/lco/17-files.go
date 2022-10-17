@@ -25,7 +25,8 @@ func main() {
 	fmt.Println("file = ", file)
 
 	// writing into a file
-	io.WriteString(file, content)
+	_, err = io.WriteString(file, content)
+	checkNilError(err)
 
 	// reading a file
 	databyte, err := ioutil.ReadFile(filepath)
