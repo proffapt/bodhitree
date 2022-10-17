@@ -34,6 +34,9 @@ func main() {
 
 
 	// Constructing a URL from the data given
+	// Very Important to remember that we pass a reference here
+	//   		  ^
+	// 			  |	
 	urlDetails := &url.URL{
 		Scheme: "https",
 		Host: "proffapt.me", 
@@ -41,7 +44,7 @@ func main() {
 		RawQuery: "user=guest",
 	}
 
-	// fmt.Println("The URL is: ", string(urlDetails)) --> not valid
+	// fmt.Println("The URL is: ", string(urlDetails)) --> NOOOOOT valid
 	fmt.Println("The URL is: ", urlDetails.String())
 }
 
