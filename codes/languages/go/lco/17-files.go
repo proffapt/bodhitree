@@ -22,7 +22,7 @@ func main() {
 	checkNilError(err)
 	defer file.Close()
 	fmt.Printf("Type of 'file': %T\n", file)
-	fmt.Println(file)
+	fmt.Println("file = ", file)
 
 	// writing into a file
 	io.WriteString(file, content)
@@ -31,7 +31,7 @@ func main() {
 	databyte, err := ioutil.ReadFile(filepath)
 	checkNilError(err)
 	fmt.Printf("Type of 'databyte': %T\n", databyte)
-	fmt.Println(databyte)
+	fmt.Println("Databyte = ", databyte)
 }
 
 func checkNilError(err error){
