@@ -11,5 +11,13 @@ func main() {
 	fmt.Println("The url is: ", urlpath)
 	
 	// Parsing (extracting information from) the URL
-	url.Parse(urlpath)
+	ustruct, err := url.Parse(urlpath)
+	cne(err)
+	fmt.Printf("Type of 'ustruct': %T", ustruct)
+}
+
+func cne(err error) {
+	if err != nil {
+		panic(err)
+	}
 }
