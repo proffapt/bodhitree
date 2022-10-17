@@ -24,7 +24,9 @@ func main() {
 	fmt.Println("Query = ", ustruct.Query())
 
 	// Extracting different params from the raw query..
-
+	qparams := ustruct.Query()
+	fmt.Println("User = ", qparams["user"])
+	fmt.Println("session_id = ", qparams["session_id"])
 }
 
 func cne(err error) {
