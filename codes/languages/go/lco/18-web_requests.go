@@ -19,7 +19,9 @@ func main() {
 	checkNilError(err)
 	defer response.Body.Close() // caller's (your) responsibility
 	fmt.Printf("Type of 'response': %T\n", response)
-	ioutil.ReadAll(response.Body)
+	body, err := ioutil.ReadAll(response.Body)
+	checkNilError(err)
+	fmt.Println(body)
 }
 
 func checkNilError(err error) {
