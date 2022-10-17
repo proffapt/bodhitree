@@ -7,6 +7,6 @@ import "fmt"
 // Follows LIFO, logical hai.
 func main() {
 	defer fmt.Println("!")
-	defer fmt.Println("You")
+	defer fmt.Print("You")
 	fmt.Print("Fuck ")
 }
