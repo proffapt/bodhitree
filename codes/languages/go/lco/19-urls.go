@@ -17,6 +17,7 @@ func main() {
 	fmt.Println("Printing info about the url.")
 	fmt.Println("Port = ", ustruct.Port())
 	fmt.Println("Host = ", ustruct.Host)
+	fmt.Println("Host = ", ustruct.Path)
 }
 
 func cne(err error) {
