@@ -13,7 +13,7 @@ func main() {
 	// Parsing (extracting information from) the URL
 	ustruct, err := url.Parse(urlpath)
 	cne(err)
-	fmt.Printf("Type of 'ustruct': %T", ustruct)
+	fmt.Printf("Type of 'ustruct': %T\n", ustruct)
 	fmt.Println("Printing info about the url.")
 	fmt.Println("Protocol = ", ustruct.Scheme)
 	fmt.Println("Hostname = ", ustruct.Hostname())
