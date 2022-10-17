@@ -8,6 +8,7 @@ package main
 */
 import (
 	"fmt"
+	"io/ioutil"
 	"net/http"
 )
 
@@ -16,8 +17,9 @@ const url string = "https://lco.dev"
 func main() {
 	response, err := http.Get(url)
 	checkNilError(err)
+	defer response.Body.Close() // caller's (your) responsibility
 	fmt.Printf("Type of 'response': %T\n", response)
-	response.Body.Close()
+	ioutil.ReadAll(response.Body)
 }
 
 func checkNilError(err error) {
