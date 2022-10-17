@@ -25,8 +25,10 @@ func main() {
 	fmt.Println("file = ", file)
 
 	// writing into a file
-	_, err = io.WriteString(file, content)
+	length, err := io.WriteString(file, content)
 	checkNilError(err)
+	fmt.Printf("Type of 'length': %T\n", length)
+	fmt.Println("length = ", length)
 
 	// reading a file
 	databyte, err := ioutil.ReadFile(filepath)
