@@ -25,6 +25,7 @@ func main() {
 		case 5:
 			 	fmt.Println("Weee, it's a 5")
 				fmt.Println("Wait! Did we just have a fallthrough here?")
+				// no need for any braces or whatsoever!
 		case 6:
 			fmt.Println("Weee, it's a 6")
 		default:
