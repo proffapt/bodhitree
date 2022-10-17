@@ -16,10 +16,13 @@ const content string = "This will be going to a file"
 
 func main() {
 	// creating and closing a file
+	// VERY VERY IMPORTANT, Close the file using defer at the time of creation only
+	// so that I don't forget it later on
 	file, err := os.Create(filepath)
 	checkNilError(err)
-	defer file.Close() // VERY VERY IMPORTANT, defered so that I don't forget it later on
+	defer file.Close()
 	fmt.Printf("Type of 'file': %T\n", file)
+	fmt.Println(file)
 
 	// writing into a file
 	io.WriteString(file, content)
