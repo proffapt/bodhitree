@@ -38,7 +38,7 @@ func main() {
 		Scheme: "https",
 		Host: "proffapt.me", 
 		Path: "/s3x",
-		RawPath: "user=guest",
+		RawQuery: "user=guest",
 	}
 
 	// fmt.Println("The URL is: ", string(urlDetails)) --> not valid
