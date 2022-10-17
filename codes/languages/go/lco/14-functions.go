@@ -10,3 +10,4 @@ func main() {
 func greeting(){
 	fmt.Println("Hewwooo OwO")
 }
+// order of the funtion's declration doesn't matter in any fuking way possible.
