@@ -14,10 +14,10 @@ import (
 const url string = "https://lco.dev"
 
 func main() {
-	data, err := http.Get(url)
+	response, err := http.Get(url)
 	checkNilError(err)
-	fmt.Printf("Type of 'data': %T\n", data)
-	fmt.Println("data = ", data.Status)
+	fmt.Printf("Type of 'response': %T\n", response)
+	fmt.Println("response = ", response.Status)
 }
 
 func checkNilError(err error) {
