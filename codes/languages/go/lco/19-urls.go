@@ -21,6 +21,7 @@ func main() {
 	fmt.Println("Host = ", ustruct.Host)
 	fmt.Println("SubDir = ", ustruct.Path)
 	fmt.Println("RawQuery = ", ustruct.RawQuery)
+	fmt.Println("RawQuery = ", ustruct.RawQuery[0])
 }
 
 func cne(err error) {
