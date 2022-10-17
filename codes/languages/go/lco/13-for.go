@@ -7,7 +7,12 @@ func main() {
 	fmt.Println(langs)
 
 	// The RANGE for
-	for i := range langs {
+	for i := range langs { 
 		fmt.Println(langs[i])
+	}
+
+	// The FOR-EACH for
+	for _, lang := range langs {
+		fmt.Println(lang)
 	}
 }
