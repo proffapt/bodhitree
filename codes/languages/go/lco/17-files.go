@@ -19,7 +19,7 @@ func main() {
 	defer file.Close() // VERY VERY IMPORTANT, defered so that I don't forget it later on
 	fmt.Println("Type of 'file': %T", file)
 
-	ioutil.ReadFile(file)
+	// ioutil.ReadFile(file)
 }
 
 func checkNilError(err error){
