@@ -5,6 +5,8 @@ package main
 	Neither Read Respance nor Response.Write closes a connection.
 	That is, whenever you are making a request you have to make sure that
 	neither your reader nor your writer is closing that request.
+
+	INFACT IT"S YOUR RESPONSIBILTIY TO CLOSE THAT RESPONSE
 */
 import (
 	"fmt"
@@ -19,9 +21,9 @@ func main() {
 	checkNilError(err)
 	defer response.Body.Close() // caller's (your) responsibility
 	fmt.Printf("Type of 'response': %T\n", response)
-	body, err := ioutil.ReadAll(response.Body)
+	databyte, err := ioutil.ReadAll(response.Body)
 	checkNilError(err)
-	fmt.Println(string(body))
+	fmt.Println(string(databyte))
 }
 
 func checkNilError(err error) {
