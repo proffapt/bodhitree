@@ -25,8 +25,7 @@ func main() {
 		case 5:
 			{ 
 				fmt.Println("Weee, it's a 5")
-				fmt.Println("Wait! Did we just have a fallthrough here?")
-			}
+				fmt.Println("Wait! Did we just have a fallthrough here?") }
 		case 6:
 			fmt.Println("Weee, it's a 6")
 		default:
