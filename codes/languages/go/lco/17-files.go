@@ -5,6 +5,7 @@ package main
 
 import (
 	"fmt"
+	"io"
 	"io/ioutil"
 	"os"
 )
@@ -19,10 +20,11 @@ func main() {
 	defer file.Close() // VERY VERY IMPORTANT, defered so that I don't forget it later on
 	fmt.Printf("Type of 'file': %T\n", file)
 
-	databyte, err := ioutil.ReadFile(filepath)
-	checkNilError(err)
-	fmt.Printf("Type of 'databyte': %T\n", databyte)
-	fmt.Println(databyte)
+	io.WriteString(file, content)
+
+	// databyte, err := ioutil.ReadFile(filepath)
+	// checkNilError(err)
+	// fmt.Printf("Type of 'databyte': %T\n", databyte)
 }
 
 func checkNilError(err error){
