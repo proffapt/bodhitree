@@ -5,7 +5,7 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
+	// "io/ioutil"
 	"os"
 )
 
@@ -17,7 +17,7 @@ func main() {
 	file, err := os.Create(file)
 	checkNilError(err)
 	defer file.Close() // VERY VERY IMPORTANT, defered so that I don't forget it later on
-	fmt.Println("Type of 'file': %T", file)
+	fmt.Printf("Type of 'file': %T", file)
 
 	// ioutil.ReadFile(file)
 }
