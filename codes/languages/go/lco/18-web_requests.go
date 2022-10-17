@@ -17,7 +17,7 @@ func main() {
 	data, err := http.Get(url)
 	checkNilError(err)
 	fmt.Printf("Type of 'data': %T\n", data)
-	fmt.Println("data = ", data.StatusCode)
+	fmt.Println("data = ", data.Status)
 }
 
 func checkNilError(err error) {
