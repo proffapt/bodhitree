@@ -11,6 +11,7 @@ func main() {
 	for i:=0; i<len(langs); i++ {
 		fmt.Println(langs[i])
 	}
+	fmt.Println()
 
 	// The RANGE for
 	for i := range langs { 
