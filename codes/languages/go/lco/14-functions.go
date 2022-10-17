@@ -5,8 +5,13 @@ import "fmt"
 func main() {
 	greeting()
 	// NOTE: 'greeting' the function's name is a reference to it.
+
 	result := adder(4, 7)
 	fmt.Println(result)
+	
+	proResult, proMessage := proAdder(5, 6, 6, 7, 7, 3, 5, 6, 9)
+	fmt.Println(proResult)
+	fmt.Println(proMessage)
 }
 
 func greeting(){
@@ -19,6 +24,17 @@ func greeting(){
 func adder(a int, b int) int { 
 // func adder(a int, var b int) int {  --> INVALID
 	return a+b
+}
+
+// Name of slice storing all the inputs you gonna give to the function
+// 			  ^
+// 			  |	
+func proAdder(a ... int) (int, string) {
+	sum := 0
+	for i := range a{
+		sum += i
+	}
+	return sum, "This was your sum"
 }
 
 // order of the funtion's declration doesn't matter in any fuking way possible.
