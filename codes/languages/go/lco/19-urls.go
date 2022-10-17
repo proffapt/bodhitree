@@ -16,10 +16,10 @@ func main() {
 	fmt.Printf("Type of 'ustruct': %T", ustruct)
 	fmt.Println("Printing info about the url.")
 	fmt.Println("Protocol = ", ustruct.Scheme)
+	fmt.Println("Hostname = ", ustruct.Hostname())
 	fmt.Println("Port = ", ustruct.Port())
 	fmt.Println("Host = ", ustruct.Host)
 	fmt.Println("SubDir = ", ustruct.Path)
-	fmt.Println("SubDir = ", ustruct.Hostname())
 }
 
 func cne(err error) {
