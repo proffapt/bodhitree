@@ -38,11 +38,8 @@ func main() {
 		if lang == "golang" {
 			goto ilg // this how you use a go to
 		}
-		cont:
-			continue
 	}
 
 	ilg: // any non-reserved keyword with ':' after it becomes a goto reference
 		fmt.Println("I love Golag!")
-		goto cont
 }
