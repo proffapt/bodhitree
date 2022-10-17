@@ -14,6 +14,8 @@ func main() {
 	ustruct, err := url.Parse(urlpath)
 	cne(err)
 	fmt.Printf("Type of 'ustruct': %T", ustruct)
+	fmt.Println("Printing info about the url.")
+	fmt.Println("Host = ", ustruct.Host)
 }
 
 func cne(err error) {
