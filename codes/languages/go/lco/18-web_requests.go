@@ -16,7 +16,7 @@ const url string = "https://lco.dev"
 func main() {
 	data, err := http.Get(url)
 	checkNilError(err)
-	fmt.Println(data)
+	fmt.Printf("Type of 'data': %T\n", data)
 }
 
 func checkNilError(err error) {
