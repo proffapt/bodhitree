@@ -17,11 +17,12 @@ func main() {
 	file, err := os.Create(filepath)
 	checkNilError(err)
 	defer file.Close() // VERY VERY IMPORTANT, defered so that I don't forget it later on
-	fmt.Printf("Type of 'file': %T", file)
+	fmt.Printf("Type of 'file': %T\n", file)
 
 	databyte, err := ioutil.ReadFile(filepath)
 	checkNilError(err)
-	fmt.Printf("Type of 'databyte': %T", databyte)
+	fmt.Printf("Type of 'databyte': %T\n", databyte)
+	fmt.Println(databyte)
 }
 
 func checkNilError(err error){
