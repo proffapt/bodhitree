@@ -14,5 +14,13 @@ import (
 const url string = "https://lco.dev"
 
 func main() {
-	http.Get(url)
+	data, err := http.Get(url)
+	checkNilError(err)
+	fmt.Println(data)
+}
+
+func checkNilError(err error) {
+	if err != nil {
+		panic(err)
+	}
 }
