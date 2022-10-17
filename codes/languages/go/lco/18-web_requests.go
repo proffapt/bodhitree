@@ -21,7 +21,7 @@ func main() {
 	fmt.Printf("Type of 'response': %T\n", response)
 	body, err := ioutil.ReadAll(response.Body)
 	checkNilError(err)
-	fmt.Println(body)
+	fmt.Println(string(body))
 }
 
 func checkNilError(err error) {
