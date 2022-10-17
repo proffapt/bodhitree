@@ -27,6 +27,10 @@ func main() {
 	qparams := ustruct.Query()
 	fmt.Println("User = ", qparams["user"])
 	fmt.Println("session_id = ", qparams["session_id"])
+	// NOTE
+	/*
+		The order in which the params are stored is not guranteed in this kind of datatypes.
+	*/
 }
 
 func cne(err error) {
