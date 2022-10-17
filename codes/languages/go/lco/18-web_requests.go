@@ -8,8 +8,8 @@ package main
 */
 import "fmt"
 
-const url string = "https://lco.dev/"
+const url string = "https://lco.dev"
 
-func main)( {
+func main() {
 	
-})
+}
