@@ -32,6 +32,7 @@ func main() {
 	checkNilError(err)
 	fmt.Printf("Type of 'databyte': %T\n", databyte)
 	fmt.Println("Databyte = ", databyte)
+	fmt.Println("file content = ", string(databyte))
 }
 
 func checkNilError(err error){
