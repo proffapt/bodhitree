@@ -22,9 +22,9 @@ func main() {
 
 	io.WriteString(file, content)
 
-	// databyte, err := ioutil.ReadFile(filepath)
-	// checkNilError(err)
-	// fmt.Printf("Type of 'databyte': %T\n", databyte)
+	databyte, err := ioutil.ReadFile(filepath)
+	checkNilError(err)
+	fmt.Printf("Type of 'databyte': %T\n", databyte)
 }
 
 func checkNilError(err error){
