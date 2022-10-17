@@ -31,6 +31,18 @@ func main() {
 	/*
 		The order in which the params are stored is not guranteed in this kind of datatypes.
 	*/
+
+
+	// Constructing a URL from the data given
+	urlDetails := &url.URL{
+		Scheme: "https",
+		Host: "proffapt.me", 
+		Path: "/s3x",
+		RawPath: "user=guest",
+	}
+
+	// fmt.Println("The URL is: ", string(urlDetails)) --> not valid
+	fmt.Println("The URL is: ", urlDetails.String())
 }
 
 func cne(err error) {
