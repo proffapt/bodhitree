@@ -31,7 +31,7 @@ func adder(a int, b int) int {
 // 			  |	
 func proAdder(a ... int) (int, string) {
 	sum := 0
-	for _, i := range a{
+	for _, i := range a{ // again, first value is INDEX, second value is VALUE. INDEX is by default value.
 		sum += i
 	}
 	return sum, "This was your sum"
