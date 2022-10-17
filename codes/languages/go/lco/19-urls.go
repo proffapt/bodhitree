@@ -20,7 +20,7 @@ func main() {
 	fmt.Println("Port = ", ustruct.Port())
 	fmt.Println("Host = ", ustruct.Host)
 	fmt.Println("SubDir = ", ustruct.Path)
-	fmt.Println("SubDir = ", ustruct.User)
+	fmt.Println("RawQuery = ", ustruct.RawQuery)
 }
 
 func cne(err error) {
