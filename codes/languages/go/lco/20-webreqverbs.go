@@ -18,9 +18,9 @@ func GetRequest(url string) {
 	defer response.Body.Close()
 
 	fmt.Println("Status Code: ", response.StatusCode)
-	fmt.Println("Content Lenght: ", response.ContentLength)
+	fmt.Println("Content Length: ", response.ContentLength)
 	databyte, _ := ioutil.ReadAll(response.Body)
-	fmt.Println("Content Lenght: ", string(databyte))
+	fmt.Println("Content: ", string(databyte))
 }
 
 func cne(e error) {
