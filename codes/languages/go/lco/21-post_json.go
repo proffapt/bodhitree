@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"io/ioutil"
 	"net/http"
 	"strings"
 )
@@ -25,7 +26,8 @@ func postRequestJSON(url string){
 	response, err := http.Post(url, "application/json", requestBody)
 	cne(err)
 	defer response.Body.Close()
-	fmt.Println(response.Body)
+	databyte, _ := ioutil.ReadAll(response.Body)
+	fmt.Println(string(databyte))
 }
 
 func cne(e error) {
