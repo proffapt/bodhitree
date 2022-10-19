@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"strings"
 )
 
 const url string = "http://localhost:8000"
@@ -19,8 +20,11 @@ func GetRequest(url string) {
 
 	fmt.Println("Status Code: ", response.StatusCode)
 	fmt.Println("Content Length: ", response.ContentLength)
+	var responseString strings.Builder
 	databyte, _ := ioutil.ReadAll(response.Body)
-	fmt.Println("Content: ", string(databyte))
+	responseString.Write(databyte)
+	fmt.Println("Content: ", responseString.String())
+	// fmt.Println("Content: ", string(databyte))
 }
 
 func cne(e error) {
