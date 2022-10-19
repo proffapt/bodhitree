@@ -20,10 +20,11 @@ func GetRequest(url string) {
 
 	fmt.Println("Status Code: ", response.StatusCode)
 	fmt.Println("Content Length: ", response.ContentLength)
-	var responseString strings.Builder
+	var responseString strings.Builder // --> Creating the builder
 	databyte, _ := ioutil.ReadAll(response.Body)
-	responseString.Write(databyte)
+	responseString.Write(databyte) // Building the string using the builder; databyte as input
 	fmt.Println("Content: ", responseString.String())
+	// Alternative
 	// fmt.Println("Content: ", string(databyte))
 }
 
