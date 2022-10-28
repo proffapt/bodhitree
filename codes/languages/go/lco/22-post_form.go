@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 )
@@ -23,8 +24,10 @@ func postRequestFORM(){
 
 	response, err := http.PostForm(strurl, data)
 	cne(err)
+	defer response.Body.Close()
 
-	fmt.Println(response)
+	content, _ := ioutil.ReadAll(response.Body)
+	fmt.Println(content)
 }
 
 func cne(e error) {
