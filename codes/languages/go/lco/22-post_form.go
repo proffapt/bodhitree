@@ -28,6 +28,9 @@ func postRequestFORM(){
 
 	content, _ := ioutil.ReadAll(response.Body)
 	fmt.Println(content)
+
+	final_response := string(content)
+	fmt.Println(final_response)
 }
 
 func cne(e error) {
