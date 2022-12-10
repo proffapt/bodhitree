@@ -31,4 +31,4 @@ dict = {"name":"proff", "age":69, "isSingle":False}
 print(type(dict))
 print(dict)
 
-
+### In python everything is a OBJECT!!
