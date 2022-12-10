@@ -28,3 +28,6 @@ print("test", 1, 2, 3, sep="~", end="^^^\n")
 print("done")
 # sep:= adds a character used to separate multiple values given in print statement - default = space
 # end:= appends given string into end of the print statement - default = new line (\n)
+
+# "" -> no need to worry about spaces, woh ',' mein khud hojati hai
+print("mein space nahi dunga", "fir bhi ajayegi")
