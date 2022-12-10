@@ -30,4 +30,4 @@ print("done")
 # end:= appends given string into end of the print statement - default = new line (\n)
 
 # "" -> no need to worry about spaces, woh ',' mein khud hojati hai
-print("mein space nahi dunga", "fir bhi ajayegi")
+print("mein space nahi dunga", "fir bhi ajayegi") # I toh like it
