@@ -19,3 +19,7 @@ print(type(f))
 # collection of datas and can be of different data types - mutable
 list = [8, 6.7, [2, 5], "fuck", True]
 print(list)
+
+# same as above but - immutable
+touple = [8, 6.7, [2, 5], "fuck", True]
+print(touple)
