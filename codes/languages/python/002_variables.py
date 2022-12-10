@@ -22,6 +22,10 @@ print(type(list))
 print(list)
 
 # same as above but - immutable
-touple = (8, 6.7, [2, 5], "fuck", True)
-print(type(touple))
-print(touple)
+tuple = (8, 6.7, [2, 5], "fuck", True)
+print(type(tuple))
+print(tuple)
+
+# dict key, value pair
+dict = {"name":"proff", "age":69, "isSingle":False}
+print(dict)
