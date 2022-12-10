@@ -28,4 +28,7 @@ print(tuple)
 
 # dict key, value pair
 dict = {"name":"proff", "age":69, "isSingle":False}
+print(type(dict))
 print(dict)
+
+
