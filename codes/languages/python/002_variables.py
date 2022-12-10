@@ -32,3 +32,14 @@ print(type(dict))
 print(dict)
 
 ### In python everything is a OBJECT!!
+
+## OPERATORS
+# neeche dekho
+# + - * / % => OK
+
+# **
+print(2**3) # power
+
+# //
+print(5//3) # floor division
+# ^^ basically means integral division
