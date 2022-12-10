@@ -3,7 +3,7 @@ b = True
 c = "proff"
 d = None
 e = 2.4
-f = comp(4, 5)
+f = complex(4, 5)
 
 print(type(a))
 print(type(b))
