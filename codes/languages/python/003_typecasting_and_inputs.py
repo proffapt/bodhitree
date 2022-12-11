@@ -16,3 +16,5 @@ print(int(a)+int(b))
 x=3.4
 y=5
 print(x+y)
+
+# float + int = float (the interpreter typcasted the lower preference'd variable to that of higher preference - impplicitly)
