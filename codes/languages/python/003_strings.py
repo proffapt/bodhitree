@@ -54,5 +54,70 @@ print(name.lower())
 text="  HEHE Fuck OFF "
 print(text.strip())
 ## stripping out trailing "END" characters
-text2="^^my text^hehe^^^^"
+text2="This^^my text^^hehe^^^^"
 print(text2.rstrip("^"))
+## replacing all the occurances of ^ with say, !
+print(text2.replace("^", "!"))
+## Splitting the string from specified character sequence and putting the parts into a list
+print(text2.split("^^"))
+## Make first letter capital and rest in small char
+text3="proffAPT"
+print(text3.capitalize())
+## Entered parameter becomes the length of the "new centred" string - expansion of length is done 
+## via adding suitable number of characters[default = space] in the BEGINNING & END of string.
+centred=name.center(15) # by default -> space
+print(centred)
+centred=name.center(15, ".") # specifying '.' as the padder
+print(centred)
+print(len(centred))
+## counting the number of occurances
+print(text2.count("^"))
+## is the string ending with particular character sequence?
+print("text2 endswtih '^^^^':", text2.endswith("^^^^"))
+print("text2 endswith '^^^':", text2.endswith("^^^"))
+print("text2 endswith '^^^^^':", text2.endswith("^^^^^"))
+print("the substring of name=proffapt [5,8) ends with 't':", name.endswith("t" , 5, 8)) # does the substring [5, 8) ends with t?
+## is the string starting with particular character sequence?
+print("text2 startswith 'Thi':", text2.startswith("Thi"))
+print("text2 startswith '^^':", text2.startswith("^^^"))
+print("the substring of name=proffapt [5,8) ends with 'a':", name.startswith("a" , 5, 8)) # does the substring [5, 8) ends with t?
+## find gives first occurance of the string (position) otherwise if not found gives -1
+print(name.find("ff"))
+print(name.find("fff"))
+## index gives first occurance of the string (position) otherwise if not found throws an ERROR
+print(name.index("ff"))
+# print(name.index("fff")) #-> Throws an error.
+## alphanumeric: A-Z, a-z, 0-9
+an="haha88"
+print("'haha88' is alpha-numeric:", an.isalnum())
+an="haha88$" 
+###################### -> here I re-assigned the variable : the older string is still their in memory!
+print("'haha88$' is alpha-numeric:", an.isalnum())
+## alpha: A-Z, a-z
+a="adfjaljfa"
+print("'adfjaljfa' is alpha:", a.isalpha())
+print("'haha88$' is alpha:", an.isalpha())
+## lower-case and upper-case
+print("'Proffapt' is lower:", name.islower())
+print("'adfjaljfa' is lower:", a.islower())
+a="JKLJJJ"
+print("'JKLJJJ' is lower:", a.isupper())
+## Printable
+print("'JKLJJJ' is printable:", a.isprintable())
+a="aldfjaksdfj\n" # -> \n is not printed infact a new line literally is printed hence a is not printable as it contains \n
+print("'aldfjaksdfj\\n' is printable:", a.isprintable())
+## if contains only whitespaces only then true!
+x="       " # Using spaces
+print("'       ' -> using spaces only, is a space:", x.isspace())
+x="     " # Using tabs
+print("'        ' -> using tabs only, is a space:", x.isspace())
+## Fist letter of every word should be capital
+x="To Kill A Mocking Bird"
+print("'To Kill A Mocking Bird' is a title:", x.istitle())
+x="To Kill a Mocking Bird"
+print("'To Kill a Mocking Bird' is a title:", x.istitle())
+## Convert the string to a title
+x="To Kill a Mocking bIRD"
+print("Converting 'To Kill a Mocking bIRD' to a title:", x.title())
+## Swapping / Interchanging the cases
+print("Interchanging the cases of 'To Kill a Mocking bIRD':", x.swapcase())
