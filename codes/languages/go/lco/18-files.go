@@ -10,7 +10,7 @@ import (
 	"os"
 )
 
-const filepath string = "./17_ki_file.txt"
+const filepath string = "./18_ki_file.txt"
 const content string = "This will be going to a file"
 // rememeber walrus operator doesn't work in global and stuff
 
