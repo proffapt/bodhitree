@@ -10,7 +10,7 @@ func main() {
 	// ** Syntax 1
 	/*
 		You have to initialise the slice while using this syntax
-		That is can NOT  be done using
+		That can NOT  be done using
 
 		var ms []int
 		ms[0] = 1
@@ -27,6 +27,11 @@ func main() {
 		>> Rather you will have to do this
 		ms := []int{}
 	*/
+	test := []int{} // creating an empty slice 
+	// CAUTION!: This is NOT equivalent to test := [0]int{} -> is an array
+	fmt.Println(test)
+	test = append(test, 1)
+	fmt.Println(test)
 	var ms = []int{1, 2, 3, 4}
 	// ms := []int{1, 2, 3, 4} --> WORKS too
 	fmt.Println(ms)
