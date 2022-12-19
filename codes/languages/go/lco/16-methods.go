@@ -20,7 +20,7 @@ func (u User) getdata(){
 	fmt.Println(u)
 }
 
-// Not that to make sure things are changed in real,
+// Note that to make sure things are changed in real,
 // and their copy wasn't passed into the function
 // Always use pointer as the type of argument.
 func (u *User) setemail(mail string){

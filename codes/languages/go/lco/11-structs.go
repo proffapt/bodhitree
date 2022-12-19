@@ -1,25 +1,25 @@
 package main
-// no inheritance concept in golang, neither super and parent.
+// no concept of inheritance in golang, neither super nor parent.
 import "fmt"
 
 // Syntax of struct 
 type User struct { // FOCUS ON "User" that capital U has an importance, it means this struct User is publicly avaialable to use
-	// below have same capital letter, which carry the same meaning.
-	Name string
-	Email string
-	Verified bool
-	Age int
+	Name 		string
+	Email 		string
+	Verified	bool
+	Age 		int
+	// above had same capital letter, which carry the same meaning.
 }
 
 func main() {
-	proffapt := User{"Arpit", "proffapt@pm.me", true, 20}
+	proffapt := User{"Arpit", "proffapt@pm.me", true, 20} // -> You have to provide all the data
 	fmt.Println(proffapt)
 	fmt.Printf("%v\n", proffapt)
 
 	// for more detailed output
 	fmt.Printf("%+v\n", proffapt)
 
-	// for individual stuff
+	// for individual stuff - All the three means the same!
 	fmt.Printf("%v\n", proffapt.Age)
 	fmt.Printf("%+v\n", proffapt.Name) // -->> To note, it is same like earlier
 	fmt.Println(proffapt.Email)

@@ -5,6 +5,7 @@ import "fmt"
 func main() {
 	// Declaration
 	var array [4]string
+	fmt.Printf("Type of array is: %T\n", array)
 	array[0] = "apple"
 	array[1] = "microsoft"
 	array[3] = "tesla" 
@@ -12,11 +13,17 @@ func main() {
 	fmt.Println(array) // notice an extra space is there between tesla and microsoft - to indicate empty element
 	fmt.Println(len(array))
 
-	var testArray []string // this means an array of length '0'
-	// var testArray = [0]string{} -> means the same thing as above
-	// testArray[0] = "apple" -> This alone will give error since this is for an array whose size is atleast '1'
-	fmt.Println(testArray)
-	fmt.Println(len(testArray))
+	// CAUTION!
+	/*
+		var testArray []string // this DOESN'T mean an array of length '0'
+		>>> 	what this mean is a "SLICE" 
+		fmt.Printf("Type of testArray %T\n", testArray)
+
+		testArray[0] = "apple" -> This alone will give error since this is for an array whose size is atleast '1'
+		>>>		Instead you will do this
+		testArray = append(testArray, "fuck", "her")
+		fmt.Println(testArray)
+	*/
 
 	// Initialisation
 	var myArray = [3]string{"fuck", "your", "momma"}

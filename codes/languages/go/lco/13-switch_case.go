@@ -12,23 +12,29 @@ func main() {
 
 	diceNumber := rand.Intn(6)+1
 
+	// No need for break.. modern switch statements are smart enough
 	switch diceNumber {
-		case 1:
-			fmt.Println("Weee, it's a 1")
-		case 2:
-			fmt.Println("Weee, it's a 2")
-		case 3:
-			fmt.Println("Weee, it's a 3")
-		case 4:
-			fmt.Println("Weee, it's a 4")
-			fallthrough // will fall to the very next case only, NOOOT till the end!
-		case 5:
-			 	fmt.Println("Weee, it's a 5")
-				fmt.Println("Wait! Did we just have a fallthrough here?")
-				// no need for any braces or whatsoever!
-		case 6:
-			fmt.Println("Weee, it's a 6")
-		default:
-			fmt.Println("What the fuck was that!?")
+	case 1:
+		fmt.Println("Weee, it's a 1")
+	case 2:
+		fmt.Println("Weee, it's a 2")
+	case 3:
+		fmt.Println("Weee, it's a 3")
+	case 4:
+		fmt.Println("Weee, it's a 4")
+		fallthrough // will fall to the very next case only, NOOOT till the end!
+	case 5:
+		fmt.Println("Weee, it's a 5")
+		fmt.Println("Wait! Did we just have a fallthrough here?")
+		if diceNumber == 4 {
+			fmt.Println("YES!")
+		} else {
+			fmt.Println("NO!")
+		}
+		// no need for any braces or whatsoever!
+	case 6:
+		fmt.Println("Weee, it's a 6")
+	default:
+		fmt.Println("What the fuck was that!?")
 	}
 }

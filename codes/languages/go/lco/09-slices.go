@@ -6,35 +6,40 @@ import (
 )
 
 func main() {
-	// arrays without size-declration are slices
+	// arrays - (size-declration) + more abstraction + features = slices
 	// ** Syntax 1
 	/*
-		You have to initialise the slice while using this syntax
+		This syntax is exact photocopy of the methods used to create an array
+		But with a very obvious catch, in both methods you don't have to specify the
+		size explicitly while creating the slice as in case with array.
+
 		That can NOT  be done using
 
-		var ms []int
+		var ms []int -> Created a slice
 		ms[0] = 1
 		ms[1] = 2
 		ms[2] = 3
 		ms[3] = 4
 		|
-		--> Invalid
+		--> Invalid: Adding values like an array
 
-		var ms []int{}
-		|
-		--> Invalid
-
-		>> Rather you will have to do this
-		ms := []int{}
+		Rather: use append()
 	*/
-	test := []int{} // creating an empty slice 
-	// CAUTION!: This is NOT equivalent to test := [0]int{} -> is an array
+
+	// ** SYNTAX 1a
+	var test []int
 	fmt.Println(test)
-	test = append(test, 1)
+	fmt.Printf("type of ms is: %T\n", test)
+	test = append(test, 69)
 	fmt.Println(test)
+
+	// ** SYNTAX 1b
 	var ms = []int{1, 2, 3, 4}
-	// ms := []int{1, 2, 3, 4} --> WORKS too
+	// ms := []int{1, 2, 3, 4} // --> WORKS too
+	// ms := []int{} // --> creating an empty slice 
+	// CAUTION!: ^^ This is NOT equivalent to test := [0]int{} -> is an array
 	fmt.Println(ms)
+
 	// appending
 	ms = append(ms, 5, 6)
 	fmt.Println(ms)
@@ -49,6 +54,10 @@ func main() {
 
 	// Slicing the slices
 	slice1 := append(ms[1:]) // start from the index 1
+	// Ok so disecting the above statement will result in
+	// slice1 is the reference
+	// ms[1:] is what that is going to be used as something I call base slice
+	// and since no more arguments are provided, then nothing more is gonna be added to the base slice
 	fmt.Println(slice1)
 	slice2 := append(ms[:4]) // go till the index 3
 	fmt.Println(slice2)
@@ -63,12 +72,14 @@ func main() {
 	/*
 		Utilising DMA
 
-		- Doesn't require you to initialise it
+		- You CAN"T initialise it.
 		- Have to set a minimum of size to allocate during initialisation
 
 		So, it's like slices with minimum size.
 	*/
 	slice := make([]int, 4)
+	// slice := make([]int{1, 2, 3, 4}, 4) -> You just can't initialise it!
+	// 					^ will give error as []int{...} is not a type
 	slice[0]=1
 	slice[1]=2
 	slice[2]=3
@@ -91,5 +102,7 @@ func main() {
 
 	// Deleting a value from slice
 	slice = append(slice[:2], slice[3:]...) // --> removes the element in 2nd index
+	// It utilised the concept of variadic arguments
 	fmt.Println(slice)
+	delete(slice, 2)
 }

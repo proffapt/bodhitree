@@ -14,7 +14,10 @@ func greeting(){
 		// 				  ^
 		// 				  |
 func adder(a int, b int) int { 
-// func adder(a int, var b int) int {  --> INVALID
+// 		   ^	  ^       ^
+// 		   |	  |		  |
+//		   -------------------- These combined are called function signatures.
+// func adder(a int, var b int) int {  // --> INVALID
 	return a+b
 }
 
