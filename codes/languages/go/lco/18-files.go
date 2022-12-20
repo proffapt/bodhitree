@@ -10,7 +10,7 @@ import (
 	"os"
 )
 
-const filepath string = "./18_ki_file.txt"
+const filepath = "./18_ki_file.txt"
 const content string = "This will be going to a file"
 // rememeber walrus operator doesn't work in global and stuff
 
@@ -21,7 +21,6 @@ func main() {
 	fmt.Println("------ File creation phase ------")
 	file, err := os.Create(filepath)
 	checkNilError(err)
-	defer file.Close()
 	fmt.Printf("Type of 'file': %T\n", file)
 	fmt.Println("file = ", file)
 
@@ -29,6 +28,7 @@ func main() {
 	fmt.Println("------ File writing phase ------")
 	length, err := io.WriteString(file, content)
 	checkNilError(err)
+	defer file.Close()
 	fmt.Printf("Type of 'length': %T\n", length)
 	fmt.Println("length = ", length)
 

@@ -14,4 +14,5 @@ func main() {
 	defer fmt.Print("You ")
 	// LIFO is followed, the last defer is executed first
 	fmt.Print("Fuck ")
+	// To imagine the output read the defer statements in reverse order of "supposed" execution
 }
