@@ -2,11 +2,12 @@ package main
 
 // IMPORTANT ADVICE
 /*
-	Neither Read Respance nor Response.Write closes a connection.
-	That is, whenever you are making a request you have to make sure that
-	neither your reader nor your writer is closing that request.
+	You might read somewhere in the documentation itself that connection 
+	will be closed after reading the body. NOTE THAT:
+	Neither ReadResponce nor Response.Write ever closes a connection.
 
-	INFACT IT"S YOUR RESPONSIBILTIY TO CLOSE THAT RESPONSE
+	That is, whenever you are making a request you have to make sure that
+	IT"S YOUR RESPONSIBILTIY TO CLOSE THAT RESPONSE
 */
 import (
 	"fmt"
@@ -17,13 +18,20 @@ import (
 const url string = "https://lco.dev"
 
 func main() {
-	response, err := http.Get(url)
-	checkNilError(err)
-	defer response.Body.Close() // caller's (your) responsibility
-	fmt.Printf("Type of 'response': %T\n", response)
-	databyte, err := ioutil.ReadAll(response.Body)
-	checkNilError(err)
-	fmt.Println(string(databyte))
+	// response, err := http.Get(url)
+	// checkNilError(err)
+	// aliter of the stuff ^^
+	// The golang style
+	if response, err := http.Get(url); err !=nil {
+	//   ^ This has a scope limited to this if-elif-else block only, out of it; it doesn't exist
+		panic(err)
+	} else {
+		defer response.Body.Close() // caller's (your) responsibility
+		fmt.Printf("Type of 'response': %T\n", response)
+		databyte, err := ioutil.ReadAll(response.Body) // firse.. ioutil se read karne par exact data nahi databyte milta hai!
+		checkNilError(err)
+		fmt.Println(string(databyte))
+	}
 }
 
 func checkNilError(err error) {
