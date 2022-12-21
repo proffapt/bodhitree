@@ -1,3 +1,7 @@
+/*
+"request": "POST"
+"Data"   : "JSON"
+*/
 package main
 
 import (
@@ -13,7 +17,7 @@ func main() {
 	postRequestJSON(url)
 }
 
-func postRequestJSON(url string){
+func postRequestJSON(url string) {
 	// fake JSON payload / data
 	requestBody := strings.NewReader(`
 		{
@@ -22,7 +26,8 @@ func postRequestJSON(url string){
 			"browser":"firefox",
 			"browser_version":21.2
 		}
-	`)
+	`) // could have given os.Stdin to read input from standard input but we are hardcoding the requestBody
+	// Can create any kind of data using this method
 	response, err := http.Post(url, "application/json", requestBody)
 	cne(err)
 	defer response.Body.Close()

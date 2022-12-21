@@ -1,3 +1,9 @@
+/*
+"request": "POST"
+"Data"   : "url-encoded form" (aka Form-encoded)
+
+Need? - Image upload and stuff
+*/
 package main
 
 import (
@@ -7,30 +13,27 @@ import (
 	"net/url"
 )
 
-const strurl string = "http://localhost:8000/postform"
+const URL string = "http://localhost:8000/postform"
 
 func main() {
 	postRequestFORM()
 }
 
-func postRequestFORM(){
+func postRequestFORM() {
 	// constructing data
+	requestBody := url.Values{} // Remember this? Where have you seen this before??
+	// This is the type of Query Parameters (response.Query()) -> which was basically a map.
+	requestBody.Add("username", "proffapt") // ("key", "value")
+	requestBody.Add("password", "mein_nahin_bataunga")
+	requestBody.Add("email", "proffapt@pm.me")
+	requestBody.Add("browser_version", "108.9") // key and value both must be string.
+	// Just this; only the way of data generation is different
 
-	data := url.Values{}
-
-	data.Add("username", "proffapt")
-	data.Add("password", "mein_nahin_bataunga")
-	data.Add("email", "proffapt@pm.me")
-
-	response, err := http.PostForm(strurl, data)
+	response, err := http.PostForm(URL, requestBody)
 	cne(err)
 	defer response.Body.Close()
-
-	content, _ := ioutil.ReadAll(response.Body)
-	fmt.Println(content)
-
-	final_response := string(content)
-	fmt.Println(final_response)
+	databyte, _ := ioutil.ReadAll(response.Body)
+	fmt.Println(string(databyte))
 }
 
 func cne(e error) {
