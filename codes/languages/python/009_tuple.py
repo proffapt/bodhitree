@@ -1,4 +1,6 @@
 # Tuple is immutable!
+## What we mean is the memory address where tuple is located is not modifable
+## you can surely assign same variable multiple times with different tuples.. but they are not gonna be in same memory address.
 ## What's the fucking use then?
 ###~> Sometimes you want a CONSTANT list like a constant variable.. for that exact reason.
 tup = (1, 5, 6, "apple")
@@ -17,3 +19,15 @@ print("The tuple is:", tup2, "& obviously its type:", type(tup2))
 print("tup[-2] =", tup[-2]) # last se 2nd counting starts with 1.. and obviously len(tup)-2
 
 #### And literally every other method is similar as of list.. except for the fact that you can't change the existing tuple.
+
+## Manipulating tuples
+### tuple -> list -> modify -> tuple
+list = list(tup)
+list.append("mango")
+tup = tuple(list) ## again yahan mene tup ko jab re-assign kiya toh matlab hai uske memory address ko change krdiya jahan woh refer kar raha tha.. woh purani wali tuple abhi bhi memory mein padi hai.
+## If it was list and i append to ussi memory ko delete karke ya jo kuch bhi karke wahin par at the spot add kiya jata.. woh purani list exist hi nahi karti..
+print("Modified tuple is:", tup)
+
+## Concatenation
+tup3 = tup + tup2
+print(tup3)
