@@ -8,6 +8,10 @@ print(marks[4])
 print(marks[5])
 ## ^^ pretty straight forward ¯\_(ツ)_/¯ 
 ## Lists are mutable -> Arraylist from java, slices from golang -> you can add new values into them
+'''
+    Concept of mutability is like jis memory address par woh data tha woh wahi
+    over-write hojayega.. 
+'''
 ## Tuple in python aren't mutable -> Arrays of other languages
 
 ### Negative Indexing
@@ -57,7 +61,8 @@ list.sort() # > sorting the list in ASCENDING order
 print("Sorting above list in ASCENDING order:", list)
 list.sort(reverse=True) # > sorting the list in DESCENDING order
 print("Sorting in DESCENDING order:", list)
-print("Index of `0`:", list.index(0)) # > returns the index of first occurance of the index
+print("Index of `0`:", list.index(0, 3, 6)) # > returns the index of first occurance of the index
+##                      Start index  ^  ^ End index.. and obviously (NON INCLUSIVE)
 print("Number of occurances of `45`:", list.count(45)) # > counts the number of times 45 has occured
 
 ### l is the pointer to the address in memory where the list is

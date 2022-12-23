@@ -24,8 +24,9 @@ print("tup[-2] =", tup[-2]) # last se 2nd counting starts with 1.. and obviously
 ### tuple -> list -> modify -> tuple
 list = list(tup)
 list.append("mango")
+list.pop(2)
 tup = tuple(list) ## again yahan mene tup ko jab re-assign kiya toh matlab hai uske memory address ko change krdiya jahan woh refer kar raha tha.. woh purani wali tuple abhi bhi memory mein padi hai.
-## If it was list and i append to ussi memory ko delete karke ya jo kuch bhi karke wahin par at the spot add kiya jata.. woh purani list exist hi nahi karti..
+## If it was list and I append, toh ussi memory ko delete karke ya jo kuch bhi karke wahin par at the spot add kiya jata.. woh purani list exist hi nahi karti..tabhi toh MUTATION kehte hain.
 print("Modified tuple is:", tup)
 
 ## Concatenation
