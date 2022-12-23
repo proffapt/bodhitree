@@ -219,9 +219,15 @@ func addOneCourse(w http.ResponseWriter, r *http.Request) {
 		Just so that I don't rely on user to enter a unique id
 	*/
 	rand.Seed(time.Now().UnixNano())
-	// newid := string(rand.Intn(100))
-	newid := strconv.Itoa(rand.Intn(100)) // Yet another method
-	newcourse.CourseID = newid            // Changing the id given by user
+	// newid := string(rand.Intn(100)) // -> Will not work
+	/*
+		string() -> Gives a string of rune
+		we need a string of digits
+		strconv.Itoa() -> Gives a string of digits
+	*/
+	// newid := strconv.Itoa(rand.Intn(100)) // -> Yet another method
+	newid := len(courses)
+	newcourse.CourseID = strconv.Itoa(newid + 1) // -> Changing the id given by user
 	courses = append(courses, newcourse)
 	json.NewEncoder(w).Encode("New entry added successfully")
 }

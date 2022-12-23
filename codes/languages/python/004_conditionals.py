@@ -13,15 +13,14 @@ elif(age<=8):
 else:
     print("You can't drive")
     print("Inside else statement")
-print("\nIf-else block ended.")
-
-print("END")
+print("\nIf-else block ended.\n")
 ## The code goes on checking whether each block-condition evaluates to true or not
 ## This is done in chonological order from top to bottom. If something evaluates to true
 ## then that code block is executed; and rest are discarded.
 
 ### Exercise
 currenttime=time.strftime('%H:%M:%S')
+## strftime is the method to format the time into specified format
 print("Current time is:", currenttime)
 print("Type of time output:", type(time.strftime('%H'))) ## > that's a string
 currenthour=int(time.strftime('%H'))
