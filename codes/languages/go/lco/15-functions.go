@@ -8,10 +8,24 @@ import "fmt"
 /*
 	- Anonymous Functions:
 		Functions without a name
+
+			r.HandleFunc("/", func(){
+				fmt.Println("Serving Home.. using an Anonymous fucntion")
+			})
+
 	- Immediately Invoked Functions:
 		Anonymous functions which are executed at the time of declaration
+
+			func (){
+				fmt.Println("Anonymous function acting as IIFs")
+			}()
+
 	- Lambda Functions:
 		Anonymous function assigned to a variable
+
+			sum := func(a int, b int) int {
+				return a + b
+			}
 
 	CONCLUSION:
 		The later two are a type of Anonymous function
@@ -55,4 +69,10 @@ func main() {
 	proResult, proMessage := proAdder(5, 6, 6, 7, 7, 3, 5, 6, 9)
 	fmt.Println(proResult)
 	fmt.Println(proMessage)
+
+	test := func() int {
+		fmt.Println("lambda function")
+		return 69
+	}
+	fmt.Println(test())
 }
