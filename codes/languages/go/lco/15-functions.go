@@ -23,12 +23,10 @@ func greeting() {
 	fmt.Println("Hewwooo OwO")
 }
 
-// This indicates the return type of a function, if multiple then enclose them in brackets
-// 				  ^
-// 				  |
+// The last "int" indicates the return type of a function, if multiple then enclose them in brackets
 func adder(a int, b int) int {
-	// 		   ^	  ^       ^
-	// 		   |	  |		  |
+	// 		   ^	 ^    ^
+	// 		   |	 |	  |
 	//		   -------------------- These combined are called function signatures.
 	// func adder(a int, var b int) int {  // --> INVALID
 	return a + b
