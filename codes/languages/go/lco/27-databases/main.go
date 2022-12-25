@@ -12,6 +12,11 @@ Most optimised and efficient you can get.
 /*
 	In the project directory there should be only ONE *.go file it can be main.. it can not be as well.
 	So that's why we make folders and keep files in them even if it's just a single extra file.
+
+	- One package name inside a directory say the name of directory is `database` then name the packages as `whatsoever` for every file inside the directory
+	- Things inside same directories need not to be imported
+
+	NOTE ** `go mod tidy` and others should be run in the root directory of the project
 */
 package main
 

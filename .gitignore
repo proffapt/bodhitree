@@ -1,2 +1,4 @@
 .gsync_init
 .DS_Store
+*/.env
+.env
