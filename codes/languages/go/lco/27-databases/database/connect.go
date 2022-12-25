@@ -4,8 +4,9 @@ import (
 	"context"
 	"fmt"
 	"log"
+	"os"
 
-	"github.com/spf13/viper"
+	"github.com/joho/godotenv"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
@@ -25,15 +26,12 @@ var collection *mongo.Collection
 */
 func init() {
 	// The following will load configuration file using viper
-	viper.SetConfigFile("../.env")
-	viper.ReadInConfig()
-	connectionURL := viper.Get("cURL")
+	loadEnv()
+	connectionURL := os.Getenv("cURL")
 
 	// CONNECTING TO THE DATABASE
 	// providing client options - Just the URL, this time, for connecting to the databse
-	clientOption := options.Client().ApplyURI(connectionURL.(string))
-	//                                                         ^ Type assertion is a technique of interfaces
-	//                                                     via which interfaces are converted to wishful types
+	clientOption := options.Client().ApplyURI(connectionURL)
 
 	// connecting...
 	if client, err := mongo.Connect(context.TODO(), clientOption); err != nil {
@@ -71,3 +69,9 @@ func init() {
 		* WithValue(parent, key, val)
 			> Sophisticated.. when I will need to use it I will be capable of understanding it.
 */
+
+func loadEnv() {
+	if err := godotenv.Load(); err != nil {
+		log.Fatal(err)
+	}
+}

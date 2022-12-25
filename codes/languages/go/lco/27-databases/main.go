@@ -20,8 +20,18 @@ Most optimised and efficient you can get.
 */
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"log"
+	"net/http"
+
+	router "github.com/proffapt/dotfiles/routers"
+)
 
 func main() {
-	fmt.Println("vim-go")
+	fmt.Println("API is up and running ...")
+	r := router.Router()
+
+	// Starting the server
+	log.Fatal(http.ListenAndServe(":4000", r))
 }

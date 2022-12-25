@@ -54,7 +54,7 @@ func DeleteOneMovie(movieID string) {
 	filter := bson.M{"_id": id}
 	deleted, err := collection.DeleteOne(context.Background(), filter)
 	cne(err)
-	fmt.Println("Movie got deleted with delete count:", deleted)
+	fmt.Println("Movie got deleted with delete count:", *deleted)
 }
 
 func DeleteAllMovies() {
@@ -69,7 +69,9 @@ func DeleteAllMovies() {
 	fmt.Println("Deleted all the movies from db with delete count:", deleted.DeletedCount)
 }
 
-func GetAllMovies() []bson.M {
+// NOTE bson.M was not giving all the values for some unknown reason hence I have used primitive.M
+// Which is more or less the same but better thing
+func GetAllMovies() []primitive.M {
 	// This one is gonna be a bit different
 	cursor, err := collection.Find(context.Background(), bson.D{{}}) // context and empty bson - data meaning everything - returns a cursor
 	cne(err)
@@ -79,16 +81,16 @@ func GetAllMovies() []bson.M {
 		It is a gigantic piece of data contains our data we want but also more than that so we
 		will have to loop through it and get our relevant data
 	*/
-	var movies []bson.M // when we will decode the data from curson we will get a result of type bson.M and all of those will be stored in this slice
-	var i int = 0
+	var movies []primitive.M // when we will decode the data from curson we will get a result of type bson.M and all of those will be stored in this slice
 	// While disguised as for
 	for cursor.Next(context.Background()) { // looping through a linked list till .next gives nil
-		if err := cursor.Decode(&movies[i]); err != nil { // Trying to decode the value from cursor
+		var movie primitive.M
+		if err := cursor.Decode(&movie); err != nil { // Trying to decode the value from cursor
 			log.Fatal(err)
 		}
-		i++
+		movies = append(movies, movie)
 	}
-	fmt.Println("Fetched", i, "movies")
+	fmt.Println("Fetched all the movies")
 	return movies
 }
 
