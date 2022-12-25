@@ -81,6 +81,19 @@ func main() {
 	unidirectionalChannels()
 }
 
+// Crux of the below Experiment
+/*
+	Logic - to remember
+	When does a sender or receiver feel safe that there is someone out there for them?
+	* Either it is itself inside a goroutine.
+	* Or it sees a goroutine being fired-up before it's call.
+
+	Results - NOT to remember
+	Results from the above logic
+	* Either both of them should be inside a goroutine
+	* Or one should be inside a goroutine called before the calling of the other
+*/
+
 func oneGoRoutine() {
 	// fmt.Println(<-myCh) // -> Won't work because channel se le toh raha hun lekin iss statement ko kya pata koi bhej bhi raha hai ki nahi **DEADLOCK
 	go func() {
@@ -212,10 +225,10 @@ func unidirectionalChannels() {
 		outCh := make(<-chan int) => Receive ONLY
 
 		Send and Receive are from the perspective of channel
-			chan<- means this channel is getting the value into it; so what it will do SEND!
-			<-chan means this channel is getting used to take out the value; so what it will do RECEIVE!
+			chan<- : Sending value into the channel : Send ONLY
+			<-chan : Receive value outof the channel : Receive ONLY
 
-		NOTE ** You can't close a receive only cahnnel
+		NOTE ** You CAN'T CLOSE a RECEIVE ONLY cahnnel
 	*/
 
 	inCh := make(chan<- int)
