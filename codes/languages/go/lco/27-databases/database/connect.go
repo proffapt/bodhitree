@@ -22,10 +22,10 @@ var collection *mongo.Collection
 // INIT()
 /*
 	This is the function which runs at the very first time during the start of a software / code
-	And ONLY in the starting never in midway.
+	And ONLY in the starting never in midway, and ONLY ONCE.
 */
 func init() {
-	// The following will load configuration file using viper
+	// The following will load configuration file using godoenv
 	loadEnv()
 	connectionURL := os.Getenv("cURL")
 

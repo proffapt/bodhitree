@@ -73,15 +73,15 @@ func DeleteAllMovies() {
 // Which is more or less the same but better thing
 func GetAllMovies() []primitive.M {
 	// This one is gonna be a bit different
-	cursor, err := collection.Find(context.Background(), bson.D{{}}) // context and empty bson - data meaning everything - returns a cursor
+	cursor, err := collection.Find(context.Background(), bson.D{{}}) // context and empty bson data - meaning everything - returns a cursor
 	cne(err)
 	defer cursor.Close(context.Background()) // Always close the cursor
 	// Cursor
 	/*
-		It is a gigantic piece of data contains our data we want but also more than that so we
+		It is a gigantic piece of data contains, our data we want but also more than that so we
 		will have to loop through it and get our relevant data
 	*/
-	var movies []primitive.M // when we will decode the data from curson we will get a result of type bson.M and all of those will be stored in this slice
+	var movies []primitive.M // when we will decode the data from curson we will get a result of type bson.M/primitive.M (later is better) and all of those will be stored in this slice
 	// While disguised as for
 	for cursor.Next(context.Background()) { // looping through a linked list till .next gives nil
 		var movie primitive.M
