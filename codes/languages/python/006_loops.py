@@ -45,6 +45,8 @@ for i in range(1, 13):
         print("5 guna 5 25 howe se, chal nikal ab")
         continue
     print("5 X", i, "=", 5*(i))
+else:
+    print("This part will never be reached because we are breaking in midway of the loop.. and this else is a part of the loop itself! Hence, break will skip this as well")
 
 #### emulating do-while loop in python
 while True:
@@ -57,3 +59,6 @@ else:
 ## The above example show the significance of else part, it is a part of while loop
 ## else will only be executed once when the condition just became false.
 ## if you break out of the loop, else will also be skipped!
+'''
+    In short else is executed when the loop has successfully completed all the iterations.
+'''
