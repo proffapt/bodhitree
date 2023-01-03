@@ -18,13 +18,11 @@ console.log("JS is case sensitive: Harry and harry are different as variables\n"
 		How might it introduce bugs?
 			- This piece of shit can let you redclare a variable...
 	LET: used to declare block scoped variables - BLOCK scoped - can alter only inside its block
-	CONST: to declare non-changing entities - BLOCK scoped - can alter only inside its block
+	CONST: to declare non-changing entities - BLOCK scoped
 
 	*** Initialisation
-	var & let is initilised with "undefined"
-	const are NOT initilised
-
-	const must be initialised, let doesn't have such limitations
+	var & let is initilised with "undefined" by default.
+	const are NOT initilised by default; you have to initialise it.
 
 	**** Brahmastra
 	- Always first use CONST
@@ -40,7 +38,6 @@ local = "This is a local variable with blocked scope" // Can be modified for obv
 const author = "proffapt"
 // author = "tullu" // -> Not allowed
 console.log("Author of this code is:", author)
-
 console.log("global in starting:", global)
 console.log("local in starting:", local)
 
@@ -83,9 +80,25 @@ console.log(a, b , c, d, e, f, g, h)
 console.log(typeof a, typeof b, typeof c, typeof d, typeof e, typeof f, typeof g, typeof h)
 
 console.log("\nNon-Primitive Datatypes\n")
-// Object in java == dict in pythong == map in go == arraylist in java
+// Object in java == dict in python == map in go == arraylist in java
 const item = {
 	"sex": "male",
 	"virgin": true
 }
 console.log(item, item["sex"], item["hai hi nahi"]) // something which is not a key will return undefined
+/*
+	Some words about objects.
+	- The name which we use to refer object in the memory is actually a reference.
+	- So, when reference is a CONST, you can't change the type of reference to some other primitive or abstract data type.
+	- But modifying that object is allowed, because we are just modifying the memory not changing the memory
+
+	Example
+	const a = 5
+	a = 6 -> Not allowed because we are creating 6 in another place inside memory and the re-referencing the variable to that location
+
+	const a = {sex: "male", virgin: true}
+	a['horny'] = "always" -> allowed because we modified the memory right there!
+*/
+item['horny'] = "always"
+l = console.log // An idea to reduce boilerplate code.. haha
+l(item)
