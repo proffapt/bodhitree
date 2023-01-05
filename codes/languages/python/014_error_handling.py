@@ -31,3 +31,23 @@ def fun(i):
         print("This is always executed!") # will still run even if the function has returned.
 
 print(fun(i))
+
+# Raising Custom Errors
+get = int(input("Enter a number between 6 and 9: "))
+
+if (get<6 or get>9):
+    raise ValueError("The number should be between 6 and 9")
+
+# Quiz
+a = input("Enter a number: ")
+
+if (a == 'quit'):
+    print("Exitting program..")
+    exit()
+
+try:
+    int(a)
+except Exception as e:
+    print(e)
+finally:
+    print("program ends..")
