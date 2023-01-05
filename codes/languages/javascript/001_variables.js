@@ -85,7 +85,8 @@ const item = {
 	"sex": "male",
 	"virgin": true
 }
-console.log(item, item["sex"], item["hai hi nahi"]) // something which is not a key will return undefined
+console.log(item, item["sex"], item.virgin, item["hai hi nahi"]) // something which is not a key will return undefined
+// Can access the elements either via `item["sex"] OR item.sex`
 /*
 	Some words about objects.
 	- The name which we use to refer object in the memory is actually a reference.
@@ -93,11 +94,12 @@ console.log(item, item["sex"], item["hai hi nahi"]) // something which is not a 
 	- But modifying that object is allowed, because we are just modifying the memory not changing the memory
 
 	Example
-	const a = 5
-	a = 6 -> Not allowed because we are creating 6 in another place inside memory and the re-referencing the variable to that location
+	const a = 5 -> a here is not a reference.. aka not a pointer.
+	a = 6
 
-	const a = {sex: "male", virgin: true}
+	const a = {sex: "male", virgin: true} -> a here is a reference to the memory where this object is created... aka pointer.
 	a['horny'] = "always" -> allowed because we modified the memory right there!
+	a = {} -> Not allowed coz again assigning a new object in different part of memory.
 */
 item['horny'] = "always"
 l = console.log // An idea to reduce boilerplate code.. haha
