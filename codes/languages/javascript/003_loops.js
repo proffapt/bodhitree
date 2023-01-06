@@ -30,3 +30,5 @@ let array = [1, 2, 3, 4, 5]
 for (value of array) {
 	l(value)
 }
+
+// Very obvious while and do-while loops.

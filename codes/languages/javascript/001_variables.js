@@ -104,3 +104,7 @@ console.log(item, item["sex"], item.virgin, item["hai hi nahi"]) // something wh
 item['horny'] = "always"
 l = console.log // An idea to reduce boilerplate code.. haha
 l(item)
+
+// To get all the keys and values of object separately in an array.
+l(Object.keys(item))
+l(Object.values(item))
