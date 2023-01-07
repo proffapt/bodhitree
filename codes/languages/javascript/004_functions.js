@@ -20,10 +20,14 @@ const twoSum = (a, b) => {
 console.log(twoSum(5,8))
 console.log(hardCodedSum())
 
-// IIFs are created only via function syntax NOT via arrow syntax and that too through lambda functions
-let iife = function() {
-	console.log("This is how you create an Immediately Invoked Function in JS")
-}()
+// IIFs
+let life = function() {
+	console.log("This is how you create an Immediately Invoked Function in JS");
+}();
+// Yet another method
+(function () {
+	console.log("This is how you create an Immediately Invoked Function in JS");
+})();
 
 // Won't work
 /*
