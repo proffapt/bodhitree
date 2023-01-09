@@ -6,6 +6,8 @@ print(marks[2])
 print(marks[3])
 print(marks[4])
 print(marks[5])
+for index, value in enumerate(marks): # Enumerate is like range in golang.. tho range in python only works for integers.
+    print("marks[", index, "] =", value)
 ## ^^ pretty straight forward ¯\_(ツ)_/¯ 
 ## Lists are mutable -> Arraylist from java, slices from golang -> you can add new values into them
 '''

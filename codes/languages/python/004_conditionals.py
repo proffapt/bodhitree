@@ -32,3 +32,19 @@ elif(16<currenthour<21):
     print("Good evening")
 else:
     print("Good night")
+
+## Short hand if
+a = 69 if 1>0 else 96
+print(a)
+### Use this only when the statements to be executed are short and the condition being tested is simple..
+### Do whatever you want just maintain readability of the code from perspective of third person.
+
+b=69
+print("A") if a<b else print("=") if a==b else print("B")
+## Read the above statement
+# print a if a<b
+# else
+# print = if a==b
+# else
+# print B
+# see else as the separator of logic
