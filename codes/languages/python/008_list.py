@@ -91,6 +91,8 @@ b = a + list
 print("Concatenated list of a & list:", b)
 ### Note that this is not similar to extension.. in extension the real list is modified
 ### But in here a new list is created with combination of multiple lists
+del b
+# print(b) ## Will give error
 
 ## The golang equivalent syntax for looping through list
 for index, value in enumerate(marks): # Enumerate is like range in golang for iterable data types.. tho range in python only works for integers.
