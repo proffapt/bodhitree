@@ -8,3 +8,4 @@
 - cat
 - cURL (just enough)
 - sed (over the head)
+- htop (just enough as a daily driver task manager)

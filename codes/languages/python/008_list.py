@@ -6,9 +6,6 @@ print(marks[2])
 print(marks[3])
 print(marks[4])
 print(marks[5])
-for index, value in enumerate(marks): # Enumerate is like range in golang.. tho range in python only works for integers.
-    print("marks[", index, "] =", value)
-## ^^ pretty straight forward ¯\_(ツ)_/¯ 
 ## Lists are mutable -> Arraylist from java, slices from golang -> you can add new values into them
 '''
     Concept of mutability is like jis memory address par woh data tha woh wahi
@@ -87,10 +84,21 @@ print("Inserting 69 on the index 1:", list)
 a = ["fuck", "your", "momma"]
 print("a =", a)
 list.extend(a)
-print("Exteding the list by a:", list)
+print("Extending the list by a:", list)
 
 ### Concatenation of list
 b = a + list
 print("Concatenated list of a & list:", b)
 ### Note that this is not similar to extension.. in extension the real list is modified
 ### But in here a new list is created with combination of multiple lists
+
+## The golang equivalent syntax for looping through list
+for index, value in enumerate(marks): # Enumerate is like range in golang for iterable data types.. tho range in python only works for integers.
+    print("marks[", index, "] =", value)
+## ^^ pretty straight forward ¯\_(ツ)_/¯ 
+for v in enumerate(marks):
+    print(v)
+## As obvious from the above output v is a particular entry as a tuple with (index, value) format
+### Changing the starting index value
+for index, value in enumerate(marks, start=1): ## By this indexing starts from 1 instead of 0
+    print("marks[", index, "] =", value)
