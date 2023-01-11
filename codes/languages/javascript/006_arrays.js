@@ -81,5 +81,27 @@ delete yyyaa
 l(yyyaa, "- Oops deleting whole array don't work! length of array =", yyyaa.length)
 delete yyyaa[0]
 l(yyyaa, "- Deleting a value at an index worksm, but the length is not affected =", yyyaa.length)
+// From
+/*
+	It converts an object of other kind to array
+	*/
+let str = 'proffapt'
+l(str, '->', Array.from(str)) // Creates an array
 
 // Looops & arrays.
+//// Using classic for loop is obvious
+
+//// ForEach loop
+yaa.forEach((element)=>{ // Takes in a function as argument
+	l(element*element)
+})
+
+//// For in (KIA - key in array)
+for (key in yaa) {
+	l(key)
+}
+
+//// For of (value of array)
+for (value of yaa) {
+	l(value)
+}

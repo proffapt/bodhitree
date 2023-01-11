@@ -31,4 +31,10 @@ for (value of array) {
 	l(value)
 }
 
+// Trick to remember
+/*
+	KIA: Key in Array
+	hence.. value of array
+	*/
+
 // Very obvious while and do-while loops.
