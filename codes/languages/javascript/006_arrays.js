@@ -92,8 +92,8 @@ l(str, '->', Array.from(str)) // Creates an array
 //// Using classic for loop is obvious
 
 //// ForEach loop
-yaa.forEach((element)=>{ // Takes in a function as argument
-	l(element*element)
+yaa.forEach((element, index, array)=>{ // Takes in a function as argument
+	l(element*element, index, array)
 })
 
 //// For in (KIA - key in array)
@@ -105,3 +105,23 @@ for (key in yaa) {
 for (value of yaa) {
 	l(value)
 }
+
+test_array = [1, 2, 3]
+//// map: creates a new array with altered entries!
+let yata = test_array.map((value, index, array)=>{ // NOTE: here value comes before index
+	l("value=", value, "index=", index, "whole_array=", array)
+	return value*index // MAP must return (it operates on every element and stores it according to the return statement into a NEW array)
+})
+l(yata)
+
+//// filter: creates a new array operating only on those elements which satisfy a condition
+let fata = test_array.filter((a)=>{
+	return a*0.4<1
+}) // Whenever filter function returns true while operaing on particular index, we get the corresponding ORIGINAL value
+l(fata)
+
+//// reduce: reduces an array into a single value based upon a reduce function
+let array_sum = test_array.reduce((a, b)=>{
+	return a + b
+})
+l(array_sum)
