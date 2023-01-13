@@ -1,4 +1,27 @@
-// Alert, Prompt & Confirm
+// Window
+/*
+	everything browser provides is under window.
+	it's a global object so no need to explicitly mention it.
+
+	document.body == window.document.body
+	*/
+// DOM - Document Object Model
+/*
+	All of your HTML(hence CSS coz you will be sourcing it in HTML file itself) code is packed inside one object.. called the DOM
+
+	Example:
+	window.body.style.background="red" // -> Changes the background color to red
+	*/
+// BOM - Browser Object Model
+/*
+	Everything other then DOM is packed inside BOM.
+	like redirection requires access to tab functionality of browser which is not a part of DOM.. it will be a part of BOM
+
+	Example:
+	location.href="https://example.com" // -> Redirects the user to this website
+	*/
+
+// Examples of functionalities provided by BOM :- Alert, Prompt & Confirm
 /*
 	Properties:
 		- Stop the execuition of js right there and waits for the input from the user
