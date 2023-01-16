@@ -22,6 +22,10 @@
 	As the name suggests; browser tries to correct any erraneous HTML code.. like 
 	- It will try to correctly close an incorrectly closed tag.
 	- if we put something after the body, it is automatically placed inside the body.
+
+	View Page Source V/S Inspect Element:
+		View Page Source - Has the exact HTML code which was written by the creator. Without any Auto-corrections
+		Inspect Element - Has the code which is being rendered! With all the Auto-Corrections
 */
 // Walking the DOM
 document.documentElement // Will return the HTML tag
