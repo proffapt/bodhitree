@@ -37,7 +37,16 @@ para.innerHTML="<b>This is the new text</b>"
 let html = document.querySelector(".paragraph") 
 console.log(html.outerHTML) // "<p class="paragraph"> This is the initial content.</p>"
 html.outerHTML="<div><b>This is the new text</b></div>"
-// What about nodes which other then element?
+// What about nodes which other then element? **** NOTE
 /*
 	We utilise `data` or `nodeValue` properties of those nodes
+
+	<body>
+		Hello World
+	</body>
 */
+console.log(document.body.firstElementChild.nodeValue) 
+console.log(document.body.firstElementChild.data) 
+// Both gives "Hello World", without being a element node.. as it is a text node
+console.log(document.body.textContent) // Gives only text, no tags.. nothing. OUTPUT: Hello World
+document.body.hidden = true // Hides the whole body
