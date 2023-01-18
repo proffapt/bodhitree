@@ -23,7 +23,7 @@ myfunc().then(console.log)
 // Await - Why async functions exist
 /*
 	- Await can only be used inside an async function
-	- The thing bein awaited MUST be a Promise! The value of which will be stored in the variable
+	- The thing being awaited MUST be a Promise! The value of which will be stored in the variable
 
 	# Syntax
 	let value = await promise
