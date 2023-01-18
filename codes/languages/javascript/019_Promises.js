@@ -124,14 +124,15 @@ let ap = Promise.all([p1, p2, p3])
 ap.then(value=>{
 	console.log(value) 
 	/*
+		Treat the array as a single entity.. if one fails all fail
 		Prints 1, 2, 3 resolved values after 3 seconds. Why?
 		It prints everything at the same time. When?
 		When all are resolved
 
-		Won't work when any of the promise rejects, we would have to catch it explicitly.
+		Won't work when any of the promise rejects, we would have to catch it explicitly and other results are ignored
 	*/
 })
-// 2. Print complete object even if some promise is REJECTED
+// 2. Print complete object even if some promises are REJECTED
 let aps = Promise.allSettled([p1, p2, p3])
 aps.then(value=>{
 	console.log(value) 
@@ -148,6 +149,10 @@ any.then(value=>{
 })
 // Modify promise like you own it
 p1=Promise.resolve(6)
+p1.then(value=>{
+	console.log(value)
+})
+p1=Promise.reject(new Error("custom error"))
 p1.then(value=>{
 	console.log(value)
 })

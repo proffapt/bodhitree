@@ -20,14 +20,14 @@ const twoSum = (a, b) => {
 console.log(twoSum(5,8))
 console.log(hardCodedSum())
 
-// IIFs
+// IIFEs
 let life = function() {
 	console.log("This is how you create an Immediately Invoked Function in JS");
 }();
 // Yet another method
 (function () {
-	console.log("This is how you create an Immediately Invoked Function in JS");
-})();
+	console.log("This is yet another method on how you create an Immediately Invoked Function in JS");
+})()
 
 // Won't work
 /*
