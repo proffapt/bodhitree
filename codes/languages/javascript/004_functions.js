@@ -21,6 +21,11 @@ console.log(twoSum(5,8))
 console.log(hardCodedSum())
 
 // IIFEs
+/*
+	It is used to avoid polluting the global namespace
+	Creates the memory, uses it.. deletes it.
+	Otherwise would have waited for the invoking of the variable before clearing the memory.
+	*/
 let life = function() {
 	console.log("This is how you create an Immediately Invoked Function in JS");
 }();
