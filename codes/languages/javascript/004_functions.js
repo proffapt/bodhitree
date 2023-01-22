@@ -32,11 +32,8 @@ let life = function() {
 // Yet another method
 (function () {
 	console.log("This is yet another method on how you create an Immediately Invoked Function in JS");
-})()
+})();
 
-// Won't work
-/*
-let iife = () => {
-	console.log("This is how you create an Immediately Invoked Function in JS")
-}()
-*/
+let iife = (() => {
+	console.log("This is how you create an Immediately Invoked Function in JS in Arrow function form")
+})();
