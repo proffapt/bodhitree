@@ -37,3 +37,46 @@ let life = function() {
 let iife = (() => {
 	console.log("This is how you create an Immediately Invoked Function in JS in Arrow function form")
 })();
+
+// Arrow Functions
+var af = () => console.log("You can write it without brackets"); console.log("This is not part of the function, this is a new statement") 
+af()
+af = variable => console.log(`variable = ${variable}`) // Works only when there is only one argument needed
+af(69)
+var obj = {
+	name: "proffapt",
+	sex: "nahi mila",
+	run: ()=>{
+		// console.log(`${this.name} is running`) // this.name won't work with arrow functions
+		/*
+			Because Arrow function's this contains the reference to its parent's lexical environment
+		*/
+		console.log(`${obj.name} is running`) 
+	},
+	walk: function(){
+		// Both works
+		console.log(`${this.name} is walking`)
+		console.log(`${obj.name} is walking`)
+	},
+	sleep: function(){
+		let that = this
+		(() =>{
+			// Utilising the fact that arrow function's this is basically this of it's parent block/element
+			// Won't work when this arrow function is replaced by the `function` syntax
+			console.log(`${this.name} is sleeping`)
+			console.log(`${that.name} is sleeping`) // Older trick/workaround
+		})();
+	}
+}
+// this
+/*
+	1. Used DIRECTLY within a function NOT created by arrow method, inside an object == reference to that object
+	2. Alone == global object
+	3. Inside an Event == reference to the element calling the EVENT
+	4. For arrow function == reference to the element for it's parent (just outer environment) according to above 3 rules.
+		Basically apna `this` nahi banata, apne parent se leleta hai this
+	*/
+
+obj.run()
+obj.walk()
+obj.sleep()
