@@ -6,7 +6,7 @@ document.querySelectorAll(".class-name")
 document.querySelectorAll("#id-name")
 // For selecting the very first element (efficient version of .querySelectorAll("...")[0])
 document.querySelector(".class-name")
-document.getElementsByTagName("div") // gets all the elements with a particular tag
+document.getElementsByTagName("div") // gets all the elements with a particular HTML tag
 // the letter "s"
 /*
 	getEelemnt`s`ByClassName -> array of elements with same class
@@ -30,11 +30,11 @@ console.log(elem1.matches(".box")) // Will return TRUE as elem1 has a class of b
 		#id
 */
 
-span1.closest(".box") // returns the elemen 1
+span1.closest(".box") // returns the element 1
 /*
 	How does it work?
 	First it will check whether the element itself has the specified CSS selector or not
-	Then it will check for its parent otherwise.. and so on..
+	Then it will check for its parent otherwise.. and so on.. so on..
 */
 console.log(elem1.contains(sp1)) // True
 console.log(sp1.contains(sp1)) // True

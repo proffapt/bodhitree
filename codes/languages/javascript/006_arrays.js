@@ -77,14 +77,14 @@ l("removed_entries =", removed_entries, 'new array =', yaa)
 let yyyaa = yyaa.slice(2,6)
 l(yyyaa) // wahi purana [2, 6)
 // delete - keyword
-delete yyyaa
+delete yyyaa // doesn't work
 l(yyyaa, "- Oops deleting whole array don't work! length of array =", yyyaa.length)
-delete yyyaa[0]
-l(yyyaa, "- Deleting a value at an index worksm, but the length is not affected =", yyyaa.length)
+delete yyyaa[0] // will make the first element undefined
+l(yyyaa, "- Deleting a value at an index works, but the length is not affected =", yyyaa.length)
 // From
 /*
 	It converts an object of other kind to array
-	*/
+*/
 let str = 'proffapt'
 l(str, '->', Array.from(str)) // Creates an array
 

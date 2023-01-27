@@ -1,14 +1,20 @@
-const prompt = require("prompt-sync")();
+const prompt = require("prompt-sync")()
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 l=console.log
-let num = Math.floor(Math.random()*100)+1
-
+let num = Math.floor(Math.random()*100)+1 // HOW?
+/*
+	Math.random() generates random number between 0&1
+	*100 gets it from 0&100
+	Math.floor converts to integers 0 to 99
+	+1 gets it from 1 to 100
+*/
 let guess, count=0;
-async function start_game() {
+
+(async ()=>{
 	do{
 		guess = prompt("Guess the number: ")
 		if (guess<num){
@@ -26,6 +32,4 @@ async function start_game() {
 		count++
 		console.clear()
 	} while(guess != num)
-};
-start_game()
-
+})();

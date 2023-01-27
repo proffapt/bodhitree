@@ -1,4 +1,4 @@
-// Table provides extra features for navigation ithin them.
+// Table provides extra features for navigation within them.
 /*
 	<body>	
 		<div>
