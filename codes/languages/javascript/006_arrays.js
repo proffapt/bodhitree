@@ -47,9 +47,9 @@ l(yaa)
 	For it to do sorting in ascending or descending order, you have to implement a COMPARE FUNCTION
 
 	For a COMPARE FUNCTION with A & B as arguments and return values as:
-		negative - A appears before B
-		0 - A and B have the same sort order
-		positive - A appears after B
+		negative - A appears before B :- A, B
+		0 - A and B have the same sort order :- A B
+		positive - A appears after B :- B, A
 	*/
 yaa.sort((a,b)=>{
 	return a - b
