@@ -8,11 +8,10 @@ Given a version number MAJOR.MINOR.PATCH, increment the:
 ```graphql
 	1.0.1
 	^ ^ ^
-	| |	|
+	| | |
 	| | ---- Patch Release (Backwards compaitible) - Has bug fixes
 	| ------ Minor Release (Backwards Compaitible) - New Features
 	-------- Changes that break backwards compaitibility
 ```
 
 > **Note** Refer https://semver.org/
-
