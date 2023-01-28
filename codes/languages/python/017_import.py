@@ -5,7 +5,7 @@ from math import floor as f # Combining both the above just read approaches
 from gurobipy import * # Imports everything from gurobipy & can be accessed without `dot notation`
 ##                   ^ This method is not recommended
 ## Importing custom made modules
-import filetoimport as mymod # first print statement will be executed as soon as this file is imported
+import _filetoimport as mymod # first print statement will be executed as soon as this file is imported
 
 result = sqrt(9)
 print("root(9) =", result, "pi =", pi)
