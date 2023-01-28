@@ -48,3 +48,37 @@ print("A") if a<b else print("=") if a==b else print("B")
 # else
 # print B
 # see else as the separator of logic
+
+### 'is' V/S '=='
+'''
+    'is' compares the exact location of object in memory.
+    '==' compares ONLY values
+
+    * Both of them do type checking as well (different from JS)
+'''
+print(6 == '6') # False
+print(6 is '6') # False
+a = [1, 2]
+b = [1, 2]
+print(a is b) # False
+# Do alag alag objects hain memory mein, han woh baat alag hai ki values same hain
+print(a == b) # True
+# Value toh same hain na
+''''''
+a = 3
+b = 3
+print(a == b) # True
+# Wahi purana logic is still applicable: Value toh same hain na
+print(a is b) # TRUE: WTAF?
+'''
+    WTAF did just happen?
+    Python is pretty smart ok, if it sees
+        - Immutable objects
+        - Having same values
+        It doesn't create them twice rather 
+        it references the ones other than the first one 
+        to the same memory location.
+    Why to waste memory no?
+'''
+print((1,2) is (1,2)) # True
+print(None is None) # True
