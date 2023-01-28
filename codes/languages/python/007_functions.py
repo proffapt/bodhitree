@@ -73,3 +73,11 @@ def fib(n):
     return fib(n-1) + fib(n-2)
 
 print(fib(8))
+
+## Lambda functions
+avg = lambda x,y: (x+y)/2
+#             ^      ^
+#             |  return value
+#         arguments
+print(avg(5, 6))
+# Use only for one liner manipulation on the variables
