@@ -26,11 +26,17 @@ hello()
 '''
     One of the many practical use cases can be logging a function call
 '''
-def log(*args, **kwargs):
-    def decorated():
+def log(func): # No need to provide *args. They are passed by default
+    def decorated(*args): # This is the function which is gonna be executed ultimately
+        # So, it must have those arguments
+        print(f'Logging the execution of {func}')
         print(f'Arguments given : {args}')
+        value = func(*args)
+        print(f'Return value : {value}')
     return decorated
 
 @log
 def sum(a, b):
     return a+b
+
+sum(6, 9)
