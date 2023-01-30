@@ -24,21 +24,31 @@ rules = '''
 '''
 print(rules)
 
-my_choice = int(input('Enter a number between 0 or 2 : '))
+score = [0, 0]
+while True:
+    my_choice = int(input('Enter a number between 0 & 2 : '))
+    if not (0<=my_choice<=2):
+        print('Invalid input. Please Enter number between 0 & 2.')
+        continue
 
-computer_choice = random.randint(0,2)
-print(f'Computer chose : {computer_choice}')
+    computer_choice = random.randint(0,2)
+    print(f'Computer chose : {computer_choice}')
 
-if my_choice is computer_choice:
-    print('Draw')
-    exit()
+    if my_choice is computer_choice:
+        print('Draw')
+    elif (computer_choice+1)%3==my_choice:
+        print('You +1')
+        score[0]+=1
+    else:
+        print('Computer +1')
+        score[1]+=1
 
-match my_choice:
-    case 0 if computer_choice == 2:
-        print('You Win!')
-    case 1 if computer_choice == 0:
-        print('You Win!')
-    case 2 if computer_choice == 1:
-        print('You Win!')
-    case _:
-        print('You Lose')
+    if (score[0]+score[1] == 5):
+        break
+
+score_card = f'--------------------------------------\n Score Card :- Computer : {score[1]} , You : {score[0]} \n--------------------------------------'
+print(score_card)
+if score[1] < score[0]:
+    print('You Won!')
+else:
+    print('You Lose')
