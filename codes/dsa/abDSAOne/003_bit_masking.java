@@ -1,4 +1,9 @@
 import java.util.Scanner;
+// Bit Masking
+/*
+	Kisi ek number ko kisi doosre number ke saath `&` ya `|` kar dena jisse woh change hojaye.. aka mask hojaye
+*/
+
 class Main{
 	public static void main(String[] args){
 		int n=309, mask, i; // counting from right.. starting with 0
@@ -49,12 +54,16 @@ class Main{
 		// 1) How many different bits? > XOR
 		int temp=a^b;
 		// 2) How many set bits in temp?
+		/* NOTE!!!! ********IMPORTANT*********
+
+			n&(n-1) clears the rightmost set bit
+			1101 -> 1100 -> 1000 -> 0000
+		*/
 		int setBitsCounter=0;
-		while((temp&(temp-1))!=0) {
+		do {
 			setBitsCounter++;
 			temp=temp&(temp-1);
-		}
-		if(a!=b)setBitsCounter++;
+		} while(temp!=0);
 		// has a time complexity of only the number of bits needed to be changed.. most optimal solution!
 		System.out.println("You need to change "+setBitsCounter+" bits for the conversion to take place.");
 	}

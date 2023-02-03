@@ -12,15 +12,8 @@ class Main{
 			Find the only non-repeating element in an array where every element repeats twice.
 		*/
 		int[] arr={5, 4, 1, 4, 3, 5, 1};
-		for(int i: arr) System.out.print(i+" ");
-		System.out.println();
+		for(int i: arr) System.out.print(i+" "); System.out.println();
 		int res=0;
-		/*
-		for(int i=0; i<arr.length; i++){
-			res=res^arr[i];
-		}
-		*/
-		// Doing it the java way
 		for(int i: arr) res^=i; // will yield res=3 -> the answer
 		System.out.println("The unique number is: "+res);
 
