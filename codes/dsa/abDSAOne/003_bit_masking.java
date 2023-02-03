@@ -12,10 +12,12 @@ class Main{
 		mask=1<<i;	
 		if((n&mask)==0) System.out.println("The "+i+"th bit was: 0");
 		else System.out.println("The "+i+"th bit was: 1");
-		// All the bits became 0, because of '&' with 0 and the one to be found
-		// got '&' with 1 and we can determine easily..
-		// if it was 0 > 1&0=0 > whole number 0 > thus it was 0
-		// else it will be a non-zero number > thus it was 1
+		/*
+			All the bits became 0, because of '&' with 0 and the one to be found
+			got '&' with 1 and we can determine easily..
+			if it was 0 > 1&0=0 > whole number 0 > thus it was 0
+			else it will be a non-zero number > thus it was 1
+		*/
 
 		// Setting and clearning ith bit
 		/*
@@ -58,6 +60,9 @@ class Main{
 
 			n&(n-1) clears the rightmost set bit
 			1101 -> 1100 -> 1000 -> 0000
+
+			n&(~(n-1)) clears all bits except the rightmost set bit
+			1101 -> 0001
 		*/
 		int setBitsCounter=0;
 		do {
