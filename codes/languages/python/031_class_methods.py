@@ -27,3 +27,36 @@ e.show()
 
 e2 = Employee("jaadu")
 e2.show()
+
+# Class methods as alternative constructors
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age 
+    
+    @classmethod
+    def from_str(cls, input):
+        return cls(input.split("-")[0], int(input.split("-")[1]))
+
+    # Could have been done like this as well ¯\_(ツ)_/¯ 
+    def from_str_E(self, input):
+        return Person(input.split("-")[0], int(input.split("-")[1]))
+
+p = Person("proff", 6)
+print(p.name, p.age)
+
+# What's the need of using these as an alternative constructor?
+'''
+    What if the initialisation data is in a different format?
+    That's where these come handy
+'''
+input="apt-9"
+# a = Person(input.split("-")[0], int(input.split("-")[1]))
+'''
+    This works but it makes our main code messy and decreases the ease in use 
+    of our class, what if we could put all this crap into our class..
+'''
+a = Person.from_str(input)
+print(a.name, a.age)
+yaa = Person.from_str_E(a, input)
+print(yaa.name, yaa.age)
