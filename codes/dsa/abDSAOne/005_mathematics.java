@@ -1,6 +1,6 @@
 class Main{
 	public static void main(String[] args){
-		System.out.println(GCD(24, 60));
+		System.out.println(FastPower(24, 3));
 	}
 	// Question 1
 	static void trailingZeroesInFactorial(int n){
@@ -73,4 +73,32 @@ class Main{
 			return GCD(b, a%b);
 		*/
 	}
+	/*
+		Optimised way of computing `a` raised to power of `b` (a^b)
+			Normal method: O(b)
+			Fast mehod: O(logb)
+	*/
+	// What's the idea behind it?
+	/*
+	   a^b = (a^2)^(b/2)   when b is even
+	   		 (a^(b-1)).a   when b is odd
+	*/
+	static int FastPower(int a, int b){
+		int res = 1;
+		while (b>0) {
+			if ((b&1)!=0) {
+				res *= a;
+			} 
+			a = a*a;
+			b >>= 1;
+		}
+		return res;
+	}
+	/*
+		If condition will be true only when b is specified odd and 
+		even in that case only twice
+			- First, in the initial iteration
+			- Lastly, in the last iteration
+		Otherwise we will just keep on raising a.
+	*/
 }
