@@ -7,6 +7,10 @@ class Employee:
         print(f"Employee's name is {self.name} with an id : {self.id}")
 
 # Inheritance in python works like this with NO `extend` keyword
+'''
+    Such an Inheritance where `One Parent has One Child`
+    is called SINGLE INHERITANE.
+'''
 class Programmer(Employee):
     def showLanguage(self):
         print(f'The default language is Python')
