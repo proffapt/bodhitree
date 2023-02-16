@@ -33,8 +33,9 @@ p.showLanguage()
 
     class PrgrammerEmployee(Employee, Programmer):
                               ^ This won't work
-'''
-'''
+
+    Note that this particular example is a combination of Multilevel & Multiple Inheritance
+    But the concept for multiple inheritance stays the same.
 '''
 class PrgrammerEmployee(Programmer, Employee):
     def rant(self):
@@ -55,3 +56,14 @@ print(PrgrammerEmployee.mro())
 
     Clear to visualize
 '''
+
+# Multilevel inheritance
+'''
+    When the Derived class is Derived from a class which itself is derived from another class
+'''
+class LazyProgrammer(Programmer): # Employee > Programmer > LazyProgrammer
+    def info(self):
+        print("I am a lazy programmer")
+
+l = LazyProgrammer("somsy", 88)
+l.info()
