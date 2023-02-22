@@ -10,6 +10,8 @@ class Employee:
 '''
     Such an Inheritance where `One Parent has One Child`
     is called SINGLE INHERITANE.
+
+    A ---> B
 '''
 # Inheritance in python works like this with NO `extend` keyword
 class Programmer(Employee):
@@ -34,8 +36,14 @@ p.showLanguage()
     class PrgrammerEmployee(Employee, Programmer):
                               ^ This won't work
 
-    Note that this particular example is a combination of Multilevel & Multiple Inheritance
+    Note that this particular example is a combination of Multilevel & Multiple Inheritance > Thus a hybrid inheritance
     But the concept for multiple inheritance stays the same.
+
+    A     B
+    \     /
+     \   /
+      \ /
+       C
 '''
 class PrgrammerEmployee(Programmer, Employee):
     def rant(self):
@@ -60,6 +68,8 @@ print(PrgrammerEmployee.mro())
 # Multilevel inheritance
 '''
     When the Derived class is Derived from a class which itself is derived from another class
+
+    A ---> B ---> C
 '''
 class LazyProgrammer(Programmer): # Employee > Programmer > LazyProgrammer
     def info(self):
@@ -67,3 +77,29 @@ class LazyProgrammer(Programmer): # Employee > Programmer > LazyProgrammer
 
 l = LazyProgrammer("somsy", 88)
 l.info()
+
+# Hybrid Inheritance
+'''
+    Combination of multiple inheritances
+    Like the previous example hand multilevel and multiple inheritance
+
+        A ----> B
+        \      /
+         \    /
+          \  /
+           \/
+           C
+
+    Single + Multiple
+'''
+
+# Heirarchical Inheritance
+'''
+    One parent class multiple children
+
+            A
+            |
+        ---------
+        |   |   |
+        B   C   D
+'''
