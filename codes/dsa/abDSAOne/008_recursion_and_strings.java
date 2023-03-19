@@ -6,7 +6,7 @@ class Main{
 		powerSet("abc", 0, "");
 	}
 
-	// Powerset of a string, All the substrings which can be made from the given string
+	// To print the powerset of a string, i.e., all the substrings which can be made from the given string
 	static void powerSet(String s, int i, String cur){
 		if (i==s.length()){
 			System.out.print(cur+" ");
@@ -16,7 +16,7 @@ class Main{
 		powerSet(s, i+1, cur);
 		powerSet(s, i+1, cur+s.charAt(i));
 	}
-	// Whether a given string is a palindrome or not
+	// To identify whether a given string is a palindrome or not
 	static boolean isPalindrome(String str, int l, int r){
 		if (l>=r){
 			return true;

@@ -2,8 +2,8 @@ class Main{
 	/*
 		3 steps to recursion
 			- Find the relation between ultimate problem and the
-			sub-problem just before it. This relation is known as the `recursive relation`.
-			- Generalize the relation.
+			  sub-problem just before it. This relation is known as the `recursive relation`.
+			- Generalize the above obtained relation.
 			- Then write the base case.
 	*/
 	public static void main(String[] args){
