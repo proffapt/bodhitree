@@ -3,9 +3,13 @@ class Main{
 	public static void main(String[] args){
 		// System.out.println(isPalindrome("fuck", 0, "fuck".length()-1));
 		// System.out.println(isPalindrome("racecar", 0, "racecar".length()-1));
-		powerSet("abc", 0, "");
+		// powerSet("abc", 0, "");
+		permuteStr("abc");
 	}
 
+	// To print all permutations of a given string
+	static void permuteStr(String s){
+	}
 	// To print the powerset of a string, i.e., all the substrings which can be made from the given string
 	static void powerSet(String s, int i, String cur){
 		if (i==s.length()){
@@ -13,8 +17,8 @@ class Main{
 			return;
 		}
 
-		powerSet(s, i+1, cur);
-		powerSet(s, i+1, cur+s.charAt(i));
+		powerSet(s, i+1, cur); // Either you don't choose the character
+		powerSet(s, i+1, cur+s.charAt(i)); // Or you choose the character
 	}
 	// To identify whether a given string is a palindrome or not
 	static boolean isPalindrome(String str, int l, int r){
