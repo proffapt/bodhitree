@@ -1,18 +1,47 @@
 class Main{
 	public static void main(String[] args){
 		int[] arrayBM = {1, 1, 4, 6, 4, 1, 4, 4, 5, 4, 4};
-		System.out.println(majorityElementBM(arrayBM));
+		System.out.println("The element occuring more than 50% times is "+majorityElementBM(arrayBM));
 
 		int[] arrayKadane = {-5, 4, 6, -3, 4, -1, 4};
-		System.out.println(maximumSumSubarrayKadane(arrayKadane));
+		System.out.println("Maximum sum possible from the subarrays of given array is "+maximumSumSubarrayKadane(arrayKadane));
 
 		int[] stockPriceI = {3, 1, 4, 8, 7, 2, 5};
-		System.out.println(sbsSpaceI(stockPriceI));
-		System.out.println(sbsConstSpaceI(stockPriceI));
+		System.out.println("(Utilising Space) Max Profit, given 1BS cycle at max: "+sbsSpaceI(stockPriceI));
+		System.out.println("(Constant Space) Max Profit, given 1BS cycle at max: "+sbsConstSpaceI(stockPriceI));
 
 		int[] stockPriceII = {5, 2, 6, 1, 4, 7, 3, 6};
-		System.out.println(sbsIIMaxMin(stockPriceII));
-		System.out.println(sbsIIMentos(stockPriceII));
+		System.out.println("Max Profit, any no. of BS cycles using Max Min strategy: "+sbsIIMaxMin(stockPriceII));
+		System.out.println("Max Profit, any no. of BS cycles using Mentos strategy: "+sbsIIMentos(stockPriceII));
+
+		int[] buildingHeights = {3, 1, 2, 4, 0, 1, 3, 2};
+		System.out.println("Total amount of rainwater that can be trapped: "+trapAmount(buildingHeights));
+
+	}
+	// Trapping rainwater problem
+	/*
+	   One method is with utilsing space and storing information in an auxilliary_array.
+	   This kind of method is called array preprocessing.
+	*/
+	static int trapAmount(int[] a){
+		int trap=0;
+		int[] left = new int[a.length]; left[0]=a[0];
+		int[] right = new int[a.length]; right[a.length - 1] = a[a.length - 1];
+		// Left array containing the max number available on left of ith element including itself
+		for(int i=1; i<a.length; i++)
+			if(a[i]>left[i-1]) left[i]=a[i];
+			else left[i]=left[i-1];
+
+		// Right array containing the max number available on right of ith element including itself
+		for(int i=a.length-2; i>-1; i--)
+			if (right[i+1]<a[i]) right[i]=a[i];
+			else right[i]=right[i+1];
+
+		// Now the real stuff
+		for(int i=0; i<a.length; i++)
+			trap+=(Math.min(right[i], left[i])-a[i]);
+
+		return trap;
 	}
 	// Stocks Buy & Sell - II
 	/*
@@ -61,7 +90,7 @@ class Main{
 			}
 
 			if (lmin != -1 && lmax != -1){
-				System.out.println("Buy at "+lmin+" Sell at "+lmax);
+				// System.out.println("Buy at "+lmin+" Sell at "+lmax);
 				mProfit+=(lmax-lmin);
 				lmax=-1; lmin=-1;
 			}
