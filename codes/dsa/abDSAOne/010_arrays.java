@@ -6,14 +6,72 @@ class Main{
 		int[] arrayKadane = {-5, 4, 6, -3, 4, -1, 4};
 		System.out.println(maximumSumSubarrayKadane(arrayKadane));
 
-		int[] stockPrice = {3, 1, 4, 8, 7, 2, 5};
-		System.out.println(sbsSpaceI(stockPrice));
-		System.out.println(sbsConstSpaceI(stockPrice));
+		int[] stockPriceI = {3, 1, 4, 8, 7, 2, 5};
+		System.out.println(sbsSpaceI(stockPriceI));
+		System.out.println(sbsConstSpaceI(stockPriceI));
+
+		int[] stockPriceII = {5, 2, 6, 1, 4, 7, 3, 6};
+		System.out.println(sbsIIMaxMin(stockPriceII));
+		System.out.println(sbsIIMentos(stockPriceII));
+	}
+	// Stocks Buy & Sell - II
+	/*
+	   No limit on the number of times you (Buy & Sell).
+	   You have to Sell after you buy.
+	*/
+	// Mentos method
+	/*
+	   If tomorrows price is greater than today's price, then take that difference and 
+	   keep adding them to profit.
+	   This won't give the timeline for when to buy and sell but will give the profit you can get at maximum.
+
+	   5 2   6 1  4  7 3  6 
+	   	  +4    +3 +3   +3
+	
+		Is similar to
+	   5 2   6 1 4 7 3  6 
+	   	  +4    +6   +3
+	*/
+	static int sbsIIMentos(int[] a){
+		int profit=0;
+		for (int i=0; i<a.length-1; i++){
+			if (a[i]<a[i+1]) profit+=(a[i+1]-a[i]);
+		}
+		return profit;
+	}
+	// Buy stock at its local minima and sell at it's next local maxima
+	static int sbsIIMaxMin(int[] a){
+		int mProfit=0, lmin=-1, lmax=-1;
+		for (int i=0; i<a.length; i++){
+			// Finding the minima
+			if (i == 0){
+				if (a[i]<a[i+1]) lmin = a[i];
+			} 
+			// Can't select the last one as minima, then we won't be able to sell
+			else if (i != a.length-1 && a[i]<a[i-1] && a[i]<a[i+1]) 
+				lmin = a[i];
+
+			// Finding the maxima
+			if (lmin != -1) { // When the minima has been found already
+				if (i == a.length -1) {
+					if (a[i]>a[i-1]) lmax = a[i];
+				}
+				// Can't select the first one as minima, by then we wouldn't have bought it. 
+				else if (i !=0 && a[i]>a[i-1] && a[i]>a[i+1]) lmax = a[i];
+			}
+
+			if (lmin != -1 && lmax != -1){
+				System.out.println("Buy at "+lmin+" Sell at "+lmax);
+				mProfit+=(lmax-lmin);
+				lmax=-1; lmin=-1;
+			}
+		}
+		return mProfit;
 	}
 	// Stocks Buy & Sell - I
 	/*
 	   When to Buy and Sell a stock in order to maximize profit given the daily stock price.
-	   You have to first buy and then sell.
+	   You have to first buy and then sell. And that too only once.
 
 	   Obviously bruteforce is always a solution, O(N*N)
 	*/
