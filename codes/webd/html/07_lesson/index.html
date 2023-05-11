@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+  
+  <head>
+    <meta charset="UTF-8" >
+    <meta name="author" content="proffapt">
+    <meta name="description" content="This page contains all the things I am learnig how to create as I learn html">
+    <title>My First Webpage</title>
+    <link rel="icon" type="image/x-icon" href="html5.png">
+    <link rel="stylesheet" type="text/css" href="./main.css">
+  </head>
+  
+  <body>
+    <header>
+      <h1>My Goals for the Year</h1>
+        
+        <nav aria-label="primary-navigation">
+          <ul>
+            <li>
+              <a href="#html">Learning HTML</a>
+            </li>
+            <li>
+              <a href="#vacation">Planning a Vacation</a>
+            </li>
+          </ul>
+        </nav>
+    </header>
+
+    <hr>
+    
+    <main>
+      <article id="html">
+        <h2>I am ready to learn HTML</h2>
+        <p>This is my first webpage.</p>
+        
+        <section>
+          <h3>HTML5</h3>
+          <img src="img/html_logo_300x300.png" alt="HTML5 Logo" title="This will appear when you hover on the image" width="300" height="300">
+
+          <figure>
+            <figcaption>
+              This can be used to caption literally anything, not just images.<br>
+              This should be either the very first or the very last element inside figure element.
+              Like here it is used to caption this code block below
+              Here, code is an inline element.
+            </figcaption>
+            <p>
+              <code>
+                #!/bin/bash <br>
+
+                sudo whoami
+              </code>
+            </p>
+          </figure>
+        </section>
+
+        <section>
+          <h3>My daily schedule</h3>
+          <p>Let me tell you how I:</p>
+          <ol>
+            <li>Learn more about web dev.</li>
+            <li>Plan out my schedule.</li>
+            <li>Use resources from <abbr title="Mozilla Developer Network"><a href="https://developer.mozilla.org/">MDN</a></abbr>.</li>
+          </ol>
+          <!-- This means, it's a side note, not as important / relevant to main topic -->
+          <aside>
+            <details>
+              <summary>Guess the <mark>number of hours</mark> I code per day</summary>
+              <p>I start at <time datetime="08:00">8 am</time> and I write code for <time datetime="PT3H">3 hours</time> every monrning.</p>
+            </details>
+          </aside>
+        </section>
+      </article>
+
+      <hr>
+      
+      <article id="vacation">
+        <h2>I am also planning for vacation</h2>
+        <p>I've been working hard and <em>really need a gateaway.</em></p>
+        <p>I live in KS so I want to visit a beach.</p>
+        
+        
+        <section>
+          <h3>Places I'd like to visit</h3>
+          <ul>
+            <li><p>I've heard good things about the Carribean.</p></li>
+            <figure>
+            <img src="img/caribbean.jpg" alt="Image of the Carribean" title="Just on-hover text" width="400" height="225" loading="lazy">
+              <figcaption>
+                This is the caption directly related to and talking about this particular image.
+              </figcaption>
+            </figure>
+            <li>
+              <p>I've heard good things about going here:</p>
+              <address>
+                  Margaritaville Island Reserve Riviera Cancún<br>
+                  Bahia Petempich Puerto Morelos, Mexico<br>
+                  Colonia Morelos, México 77580
+              </address>
+              <figure>
+                <img src="img/vacation.jpg" alt="Cancún vacation" title="It's 5 o'Clock Somewhere!" loading="lazy" width="400" height="267">
+                <figcaption>
+                  A Carribean vacation image
+                </figcaption>
+              </figure>
+            </li>
+          </ul>
+        </section>
+        
+        <section>
+          
+          <!-- TODO: Add more places -->
+          <!-- Avoid these while learning HTML, they will be utilised via CSS -->
+          <!-- They will be utilised such as giving same CSS styling to a block or collection of words -->
+          <!-- <div>Block Element</div> -->
+          <!-- <span>Inline Element</span> -->
+          
+          <h3>Places I want to avoid</h3>
+          <dl>
+            <dt>South Pole</dt>
+            <dd>I hear these are <strong>cold</strong>.</dd>
+
+            <dt>North Pole</dt>
+            <dd>These are also cold.</dd>
+
+            <dt>Mountain Tops</dt>
+            <dd>These are cold as well.</dd>
+          </dl>
+        </section>
+      </article>
+    </main>
+
+    <hr>
+
+    <footer>
+      <p>
+        &lt;&lt;&lt; &copy; <a href="about.html">proffapt</a> &gt;&gt;&gt;
+      </p>
+
+      <p>
+        <a href="#">Back to Top</a>
+      </p>
+    </footer>
+  </body>
+  
+</html>
