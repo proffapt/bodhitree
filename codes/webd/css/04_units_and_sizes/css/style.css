@@ -1,0 +1,38 @@
+/* absolute values can be used for border sizes, for things which you don't want to change */
+/* from browser to browser based on their settings or you don't bother if they don't change */
+header {
+  width: 50%;
+}
+
+/* Here padding will conclude to 0.6*1.5 rem */
+h1 {
+  border: 2px dashed red;
+  width: 50%;
+  font-size: 1.5rem;
+  padding: 0.6em;
+}
+/* Percentage of what? */
+/* Percentage of length of element. H1 here was block level element, length of width was length of header element which was size of page, 50% pf it will be to the mid of the page */
+/* In this example it is effectively 25% of lenght of page as header length is halved and it's 25% is given to h1. */
+
+/* Absolute values for fonts are not preferred because by that we take  */
+/* the liberty of defining fontsizes according to different browser settings */
+/* away from the browser and user themselves. */
+
+/* Instead we use rem */
+/* 1 rem = Font size of root element (consider it as the font size of browser, configured by user in settings) */
+/* We can also manipulate the value of 1rem via setting the font size for html element ourselves */
+ /* Root != immediate parent (not always) */
+
+main {
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 2em;
+  font-size: 1.2rem;
+  width: 50ch;
+}
+/* EM - if the font size for this element is not configured, then font size of immediate parent element */
+/* When we have already set the font-size of an element, em looks at the element itself instead of parent element */
+/* here the font size became 1.5*2 rem */
