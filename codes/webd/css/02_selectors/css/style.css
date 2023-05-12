@@ -1,0 +1,63 @@
+/* NOTES */
+/* CSS works like a waterfall, it cascades, Last definition is utilised. */
+/* This above property is over-ridden via SPECIFICITY, class has more SPECIFICITY than element */
+/* SPECIFICITY: ID > CLASS > element */
+
+/* Universal Selector */
+Selects each and every element in the page
+* {
+  font-family: monospace;
+}
+
+/* html element selector */
+html {
+  font-size: 18px;
+}
+
+/* body element selector */
+body {
+  border: 2px solid black;
+}
+
+/* Form element don't inherit property values by default */
+/* We can force them to inherit */
+button, input, textarea, select {
+  font-size: inherit;
+}
+
+/* class selector */
+.gray {
+  color: gray;
+}
+/* Will over-rule anything having less SPECIFICITY */
+
+/* element(s) selector */
+/* important literally over-rides every order & SPECIFICITY */
+p {
+  color: purple !important;
+}
+/* Notice that it didn't over-ride gray, coz gray is specific */
+
+/* To see the effects of cascading / order of occurance */
+p {
+  color: red;
+}
+
+/* id selector */
+/* not a good practice to use these in CSS */
+/* they come handy in html for linking and JS as well */
+#second {
+  font-style: italic;
+}
+
+/* selecting multiple elements at once for similar styling */
+/* Looks for h1s and h2 */
+h1, h2 {
+  color: blue;
+}
+
+/* Looks for a span element inside of a paragraph element */
+p span {
+  text-transform: uppercase;
+  background-color: gold;
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The following is using CSS from a file externally -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- The follosing method is using CSS from this very file internally -->
+    <!-- Previous settings will be overwritten, simply because of order of occurance -->
+    <!-- There is no such preference, that internal is preffered over internal or vice versa. -->
+    <style>
+      p {
+        color: limegreen;
+      } 
+    </style>
+  </head>
+  
+  <body>
+    <!-- Inline CSS -->
+    <!-- Will always be preferred over anything as it will be the last one to be applied -->
+    <p style="color: blue;">I am learning CSS!</p>
+  </body>
+  
+</html>
