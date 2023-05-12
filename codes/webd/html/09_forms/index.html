@@ -22,6 +22,9 @@
             <li>
               <a href="#vacation">Planning a Vacation</a>
             </li>
+            <li>
+              <a href="#contact">Contact Me</a>
+            </li>
           </ul>
         </nav>
     </header>
@@ -176,6 +179,35 @@
             <dd>These are cold as well.</dd>
           </dl>
         </section>
+      </article>
+
+      <hr>
+
+      <article id="contact">
+        <h2>Contact Me</h2>
+        <p>I would really like to hear from you!</p>
+        <form action="https://httpbin.org/get" method="get">
+          <p>
+          <label for="firstname">First Name</label>
+          <input type="text" name="firstname" id="firstname" placeholder="Mary" autocomplete="on" required autofocus>
+          </p>
+          <p>
+          <label for="lastname">Last Name</label>
+          <input type="text" name="lastname" id="lastname" placeholder="Jane" autocomplete="on" required>
+          </p>
+          <p>
+          <label for="pass">Password</label>
+          <input type="password" name="pass" id="pass" placeholder="secret password" required>
+          </p>
+          <p>
+          <label for="phone">Phone</label>
+            <input type="tel" name="phone" id="phone" placeholder="+91 1234567890" pattern="+[0-9]{2}\s[0-9]{10}" required>
+          </p>
+          <p>
+          <label for="decade">Favorite Decade</label>
+            <input type="number" name="decade" id="decade" min="1950" max="2020" step="10" value="1980">
+          </p>
+        </form>
       </article>
     </main>
 
