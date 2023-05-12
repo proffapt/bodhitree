@@ -1,0 +1,33 @@
+body {
+  font-size: 22px;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  background: papayawhip;
+  color: rgb(0, 0, 255);
+}
+/* background allows to set more properties than just color, while background-color only allows us to set the color. */
+
+p {
+  color: rgba(0, 0, 0, 0.6);
+}
+/* a in rgba is alpha channel - defines the transparency */
+/* takes values from 0 to 1 */
+
+/* handling colors using hexadecimal / hex values */
+h2 {
+  color: #FF0000;
+  color: #F00;
+  color: #f00;
+  color: #000;
+}
+/* First two mean the same */
+/* Should be a pair of two */
+/* #000 is equivalent to #000000 */
+
+/* HUE SATURATION LIGHTNESS */
+h1 {
+  color: hsl(0, 100%, 50%)
+}
+/* LIGHTNESS - 50% means it can be 50% more lighter and darker both, 0% means white, 100% means black. */
+/* SATURATION - 100% means full color, 0% means white, basically going from white to that pure color */
+/* HUE - Color values depicted as a wheel (0 - 360) 0 = 360 = red */
