@@ -1,0 +1,50 @@
+/*
+  Typography is the way in which the text is arranged and presented.
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+/* Either import via link or using this statement. */
+/* Link method is specific to html, while import can be used on both */
+
+body {
+  padding: 10%;
+  font-size: 2rem;
+  /* Font and text settings are inherited except for FORMS */
+  font-family: 'Courier New', Courier, monospace;
+  /* Here: Courier New is the first choice */
+  /* Then Courier is the second choice as fallback if first isn't found. */
+  /* Then monospace is the final choice  as fallback if first two arn't found */
+  /* This full choice is called a FONT STACK */
+  /* These suggestions are web-safe suggestions, won't require externally installaing the fonts */
+  font-family: 'Roboto', sans-serif;
+}
+
+p {
+  text-decoration: line-through;
+  /* Underlines */
+  text-transform: capitalize;
+  /* Capitalises first letter of every word */
+  text-align: justify; 
+  /* Inserts spaces so that everything looks uniform */
+  text-indent: 2em;
+  /* Indents the first line */
+  line-height: 1.5;
+  /* Accepts measurement units obviously but also accepts just numbers, default being 1.2 */
+  letter-spacing: 0.1em;
+  word-spacing: 0.4em;
+
+  /* Now time for some font-* stuff */
+  font-weight: bolder;
+  /* Number from 100(lighter)-900(bolder) */
+  /* Normal being 300-400 */
+  font-style: oblique;
+  /* There is also italic */
+  /* Oblique is much tilted italic */
+}
+
+/* 
+* We have to enforce into form objects to inherit font settings from their parents 
+input, button {
+  font: inherit;
+}
+*/
