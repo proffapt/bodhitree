@@ -1,38 +1,75 @@
+/* > WHEN TO USE ABSOLUTE VALUES */
 /* absolute values can be used for border sizes, for things which you don't want to change */
-/* from browser to browser based on their settings or you don't bother if they don't change */
-header {
-  width: 50%;
-}
+/* from browser to browser based on their settings or you don't bother if they don't change at all*/
 
-/* Here padding will conclude to 0.6*1.5 rem */
-h1 {
-  border: 2px dashed red;
-  width: 50%;
-  font-size: 1.5rem;
-  padding: 0.6em;
-}
-/* Percentage of what? */
-/* Percentage of length of element. H1 here was block level element, length of width was length of header element which was size of page, 50% pf it will be to the mid of the page */
-/* In this example it is effectively 25% of lenght of page as header length is halved and it's 25% is given to h1. */
-
+/* > FONTS SHOULD ALWAYS BE RELATIVE */
 /* Absolute values for fonts are not preferred because by that we take  */
 /* the liberty of defining fontsizes according to different browser settings */
 /* away from the browser and user themselves. */
 
-/* Instead we use rem */
-/* 1 rem = Font size of root element (consider it as the font size of browser, configured by user in settings) */
-/* We can also manipulate the value of 1rem via setting the font size for html element ourselves */
- /* Root != immediate parent (not always) */
+/* > WE USE REM FOR FONT SIZE */
+/* 1 rem = Font size of root(<html>) element (consider it as the font size of browser, configured by user in settings) */
+/* We can also manipulate the value of 1rem via setting the font size for html element ourselves - THIS IS NOT RECOMMENDED*/
+/* Root != immediate parent (not always) */
+
+/* > WHAT IS EM? */
+/* - If font size of this element is not modified by you -> font size of parent element */
+/* - If you modify the font size of this element somewhere earlier -> 1em = that modified font size */
+/* They are preferred in the SECOND CASE, for MARGINAL PADDING */
+
+/* CH - character */
+/* 1ch = Width of "0" in that particular font */
+
+/* % - PERCENTAGE OF WHAT? */
+/* Percentage of length of element. H1 here was block level element, length of width was length of header element which was size of page, 50% pf it will be to the mid of the page */
+
+/* vw / vh - VIEWPORT'S WIDTH / VIEWPORT'S HEIGHT */
+/* 1 vw = 1% of viewport's width */
+/* 1 vh = 1% of viewport's height */
+/* the viewport is basically the part of the document that is currently visible. */
+/* It is typically that section of the browser window which can render webpage */
+/* For example it won't count vertical scroll bar in itself, and will result in a horizontal scrollbar to see what's hidden by the veritcal scrollbar */
+/* SOLUTION TO THIS PROBLEM: use % instead of vw */
+
+* {
+  margin: 0;
+  padding: 0;
+  /* Over-writes default margin, padding -> Things look sticked to border */
+  /* Where does this default come from? -> Browser default settings */
+  box-sizing: border-box;
+  /* After this the calculations will include - content + padding + border */
+  /* For the other opotion - content-box: It includes only content */
+}
+
+header {
+  width: 50%;
+}
+
+body {
+  min-height: 100vh;
+}
+/* Sets minimum height of body to 100% of viewport's height */
+
+h1 {
+  border: 2px dashed red;
+  width: 50%;
+  /* It is effectively 25% of length of page as header length is halved and it's 25% is given to h1. */
+  font-size: 1.5rem;
+  padding: 0.6em;
+  /* padding will conclude to 0.6*1.5 rem */
+}
 
 main {
   font-size: 1.5rem;
+  /* Changing the parent's font size won't affect the childs(<p>) f-s value when using rem */
+  background-color: skyblue;
+  width: 50vw;
+  /* 50% of total viewport */
 }
 
 p {
   font-size: 2em;
-  font-size: 1.2rem;
+  /* output: 1.5*2 rem */
   width: 50ch;
+  /* width setting result: no more than 50 chars per line */
 }
-/* EM - if the font size for this element is not configured, then font size of immediate parent element */
-/* When we have already set the font-size of an element, em looks at the element itself instead of parent element */
-/* here the font size became 1.5*2 rem */
