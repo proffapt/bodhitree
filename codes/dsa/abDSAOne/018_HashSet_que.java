@@ -6,6 +6,7 @@ class Main {
     int[] a = {1, 2, 2, 1, 3, 1, 1, 3};
     int k = 4;
     qONE_HashSet(a, k);
+    System.out.println();
     qONE_HashMap(a, k);
   }
 
@@ -24,8 +25,19 @@ class Main {
   // O(n)
   public static void qONE_HashMap(int[] a, int k) {
     Map<Integer,Integer> m = new HashMap<>();
-    for (int i : a) {
+    for(int i=0; i < k; i++)
+      m.put(a[i], m.getOrDefault(a[i], 0)+1);
+    
+    System.out.print(m.size()+" ");
+    for(int i=k; i <= a.length-1; i++){
+      m.put(a[i], m.getOrDefault(a[i], 0)+1);
       
+      if (m.get(a[i-k]) == 1)
+        m.remove(a[i-k]);
+      else if (m.get(a[i-k]) > 1)
+        m.put(a[i-k], m.getOrDefault(a[i-k], 0)-1);
+      
+      System.out.print(m.size()+" ");
     }
   }
 }
