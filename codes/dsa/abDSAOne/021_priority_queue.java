@@ -43,11 +43,61 @@ class Main {
                                   // then 4, cost = 7 + (7 + 4)
     System.out.println(qTWO(b));
 
-    // Q3 -
+    // Q3 - Find median of a Number Stream
+    // Bruteforce - as soon as the number arrives, position it into it's slot into the array
+    // such that the array still remains sorted. And then find median as the middlemost element
+    // in the sorted array (average in case of even number of elements)
+    float[] c = {3, 1, 5, 6, 4, 2, 8};
+    System.out.println(qTHREE(c));
   }
 
-  public static int qTHREE() {
+  // O(n*logn)
+  public static float qTHREE(float[] a) {
+    PriorityQueue<Float> min_heap = new PriorityQueue<>();
+    PriorityQueue<Float> max_heap = new PriorityQueue<>(Collections.reverseOrder());
     
+    float x = -1, y = -1;
+    float median=-10;
+    for (int i=0; i<=a.length-1; i++) {
+      // First entry always goes to max heap
+      if (i == 0) {
+        max_heap.add(a[0]);
+        continue;
+      }
+      
+      // If the incoming number is less than peek of max, then 
+      // send to max otherwise min.
+      if (a[i] < max_heap.peek())
+        max_heap.add(a[i]);
+      else
+        min_heap.add(a[i]);
+      
+      // min heap has more than max heap somehow (only possible is difference of 1)
+      // then move the head of min to max
+      if (min_heap.size() - max_heap.size() > 0) {
+        float temp = min_heap.poll();
+        max_heap.add(temp);
+      }
+
+      // max heap has 2 more than min heap somehow (only 2 is possible)
+      // Move the peek of max to min
+      if (max_heap.size() - min_heap.size() > 1) {
+        float temp = max_heap.poll();
+        min_heap.add(temp);
+      }
+
+      System.out.println(max_heap+", "+min_heap);
+      // If both have same size then, average lenga hoga
+      // otherwise max_heap ka peek hi answer hai
+      x = max_heap.peek();
+      if (max_heap.size() == min_heap.size()) {
+        y = min_heap.peek();
+        median = (x+y)/2;
+      } else 
+        median = x;
+      System.out.println("Median = "+median);
+    }
+    return median;
   }
 
   public static int qTWO(int[] a) {
