@@ -17,6 +17,11 @@
 - Multiport Repeater.
 - Just echoes to every device, stupid enough to not to be able to decide where to send>
 
+### WAP
+
+- Wireless HUB :)
+- It's dumb and sends message to everyone coz that's how Wireless tech is currently.
+
 ### Bridge
 
 - Repeater wtih ability to filter MAC addresses (intelligence which Hub lacked)
