@@ -15,9 +15,11 @@ class Main {
     n4.next = n5;
     n5.next = n6;
     n6.next = n7;
+    n7.next = n3;
 
-    head.traverse(head);
+    // head.traverse(head);
 
+    System.out.println(head.fcdAlgorithm(head));
   }
 }
 
@@ -32,6 +34,28 @@ class Node {
 
   // Floyd's Cycle detection algorithm
   // Constant space
+  static Node fcdAlgorithm(Node ptr) {
+    Node slow = ptr, fast = ptr, meetingPtr = null;
+
+    while (fast != null && fast.next != null) {
+      slow = slow.next;
+      fast = fast.next.next;
+      if (fast == slow) {
+        // Now we are sure that cycle exist
+        // Let's findout the node where cycle exists
+        // That node is equidistant from:
+        // point of meeting of s, f pointers, and the start of the list
+        Node head = ptr;
+        meetingPtr = fast;
+        while (head != meetingPtr) {
+          head = head.next;
+          meetingPtr = meetingPtr.next;
+        }
+        break;
+      }
+    }
+    return meetingPtr;
+  }
   
   static Node reverse(Node ptr) {
     Node prev = null, nextPtr = null;
