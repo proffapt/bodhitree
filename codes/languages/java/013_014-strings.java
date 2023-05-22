@@ -5,6 +5,19 @@ class Main{
 		// String name = new String("proffapt");	
 		String name="proffapt";
 		// So good right?.. supported in both ways..
+    // Looping through array
+    // 1
+    for (int i = 0; i < name.length(); i++) {
+      char c = name.charAt(i); 
+      System.out.print(c);
+    }
+    System.out.println();
+    // 2
+    for (char c : name.toCharArray()) {
+      System.out.print(c);
+    }
+    System.out.println();
+    
 		System.out.println(name);
 		// strings are immutable.. they can't be changed..
 		// Various method of printing in JAVA
