@@ -26,11 +26,18 @@ class Main {
     System.out.println(min_heap); // Easily print PQ
     System.out.println("Size of heap: "+min_heap.size());
 
+    /*
+        IMPORTANT
+      You can remove any element from PriorityQueue
+    */
+    min_heap.remove(15);
+    
     while(!min_heap.isEmpty()){ // Is empty or not?
       System.out.print(min_heap.peek()+" "); // Gets the top-most element
       min_heap.poll(); // Deletes the top-most element
     }
     System.out.println();
+    // printed only 5 and 10 from the loop, as 15 was removed
 
     // Q1 - Find the kth largest element in an array
     int[] a = {20, 10, 60, 30, 50, 40};
