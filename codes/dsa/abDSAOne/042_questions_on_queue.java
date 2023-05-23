@@ -14,20 +14,71 @@ class Main {
     // Linking - Layer 2
     for (int i = 5; i < 7; i++) n[i].next = n[i+1];
     n[8].next = n[9];
-    n[6].down = n[10]; n[7].down = n[11]; n[8].down = n[12];
+    for (int i = 6; i < 9; i++) n[i].down = n[i+4];
 
     // Linking - Layer 3
     n[12].next = n[13];
-    n[11].down = n[14]; n[12].down = n[15];
+    for (int i = 11; i < 13; i++) n[i].down = n[i+3];
 
     // Linking - Layer 4
     n[15].next = n[16];
 
-    // Solution
+    // Solution(s)
     qOne(n[0]);
+    System.out.println();
+    
+    qOneOptimised(n[0]);
   }
 
+  // Modifies the original linkedlist, 
+  // Hence does the job without using anyspace.
+  // How?
+  //
+  // print using last pointer
+  static void qOneOptimised(Node head){
+    // Things with linked list are always optimised using a second pointer!
+    // Mostly slow and fast, but obviously depends on context.
+
+    Node curr = head, last = head; 
+    
+    // Modifying the linked list via connecting via next wherever needed
+    while (true){
+      last = getLastNode(last);
+      curr = getNodeWithDownNode(curr);
+      
+      // Since curr lags behind last, curr agar next 
+      // karte karte, null hogaya, that is whole list is traversed
+      if (curr == null) break;
+      
+      last.next = curr.down;
+      curr = curr.next;
+    }
+    
+    // Printing the modified linked list
+    while (head != null){
+      System.out.print(head.data+" ");
+      head = head.next;
+    }
+  }
+
+  // Get the next node from left having down pointer
+  static Node getNodeWithDownNode(Node ptr){
+    // There is a case where next karte karte, ptr becomes null
+    // then when you try down you will get error, hence do a check
+    while (ptr != null && ptr.down == null) ptr = ptr.next;
+    
+    return ptr;
+  }
+
+  // Get the last element, just before the link breaks(.next is null) for next node.
+  static Node getLastNode(Node ptr){
+    while (ptr.next != null) ptr = ptr.next;
+    
+    return ptr;
+  }
+  
   // O(N) - O(N)
+  // Using Queue data structure - extra space
   static void qOne(Node head){
     Queue<Node> q = new ArrayDeque<>();
     q.offer(head);
