@@ -1,6 +1,7 @@
 class Main{
 	/*
-		3 steps to recursion
+		4 steps to recursion
+      - Find the most appropriate sub problem to the given problem
 			- Find the relation between ultimate problem and the
 			  sub-problem just before it. This relation is known as the `recursive relation`.
 			- Generalize the above obtained relation.

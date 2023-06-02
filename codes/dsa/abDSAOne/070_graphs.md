@@ -56,10 +56,17 @@ class Main{
     int v = 5;
     int e = 10;
 
-    ArrayList<LinkedList<Integer>> list = new ArrayList<>();
+    // ArrayList<LinkedList<Integer>> list = new ArrayList<>();
+    // Both would work, anyhow since both are not limited in size
+    ArrayList<ArrayList<Integer>> list = new ArrayList<>();
+    
+    // Initialise the ArrayList
+    for (int i = 0; i <= v-1; i++){
+            adj.add(new ArrayList<Integer>());
+        }
  }
 
- static void addEdge(ArrayList<LinkedList<Integer>> a , int source, int destination){
+ static void addEdge(ArrayList<ArrayList<Integer>> a , int source, int destination){
      // Fist get the head of the list using .get(i) function, which gets the element stored in i'th index.
      // Then what you will get will be a linked list obviously, extend it by adding the destination into the list by .add(destination)
      a.get(source).add(destination);

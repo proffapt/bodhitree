@@ -8,8 +8,19 @@
       According to it, we move onto the next level only after completely discovering the current level.
 */
 
+import java.util.*
+
 class Main {
   public static void main(String[] args) {
+    // Graph to search - Creating via Adjacency List
+    ArrayList<LinkedList<Integer>> adj = new ArrayList<>();
+    // Initialising the ArrayList
+    for (int i = 0; i < 6; i++) {
+      adj.add(new ArrayList<Integer>());
+    }
+  }
+
+  static void bfs(){
     
   }
 }
