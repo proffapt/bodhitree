@@ -7,21 +7,68 @@ class Main {
     Node bt = node.myTree();
     
     // Q1 - Height of Binary Tree
-    System.out.println(qOne(bt));
+    System.out.println("Height of binary tree = "+qOne(bt));
 
     // Q2 - Size of a Binary Tree
-    System.out.println(qTwo(bt));
+    System.out.println("Size of binary tree = "+qTwo(bt));
 
     // Q3 - Maximum in a Binary Tree
-    System.out.println(qThree(bt));
+    System.out.println("Maximum value in binary tree = "+qThree(bt));
 
     // Q4 - Level Order Traversal
     // 0 12 345
+    System.out.print("Level Order Traversal = ");
     qFour(bt);
+    System.out.println();
+
+    // Q5 - Level Order Traversal with sense of change of level
+    qFive(bt);
   }
   
-  static void qFour(Node root){
+  static void qFive(Node root){
+    if(root == null) return;
+
     ArrayDeque<Node> q = new ArrayDeque<>();
+
+    q.offer(root);
+    q.offer(null);
+
+    while(!q.isEmpty()){
+      Node removed = q.poll();
+
+      if (removed == null) {
+          System.out.println();
+          if (!q.isEmpty())
+              q.offer(null);
+      }
+      else {
+          System.out.print(removed.data + " ");
+
+          if (removed.left != null)
+              q.offer(removed.left);
+
+          if (removed.right != null)
+              q.offer(removed.right);
+      }
+    }
+  }
+
+  static void qFour(Node root){
+    if(root == null) return;
+    
+    ArrayDeque<Node> q = new ArrayDeque<>();
+    
+    q.offer(root);
+    while(!q.isEmpty()){
+      Node removed = q.poll();
+      System.out.print(removed.data + " ");
+      
+      if (removed.left != null)
+        q.offer(removed.left);
+      
+      if (removed.right != null)
+        q.offer(removed.right);
+    }
   }
   
   static int qThree(Node root){

@@ -11,14 +11,14 @@
 
 // Recursion in Binary Tree 
 /*
-    - The sub subproblems are ALWAYS going to be the LEFT sub-tree and Right sub-tree.
+    - The sub-problems are ALWAYS going to be the LEFT sub-tree and Right sub-tree.
         - Forget everything now, you will have ONLY 3 NODES.
         - It directly means that the function is going to be called again for LEFT and RIGHT sub-trees.
     - The order will be decided on the basis of what you want to do.
         - f(LEFT) > Do stuff > f(RIGHT) => Means do stuff in left and then right
     
     NOTE: Via this method one can only do things in either, inorder, preorder or postorder because the recursive calling
-          leads us to the bottom of the tree. Lever order is not possible via this method - will have to use queue for that.
+          leads us to the bottom of the tree. Level order is not possible via this method - will have to use queue for that.
 */
 
 import java.util.Scanner;
