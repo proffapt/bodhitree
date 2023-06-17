@@ -31,15 +31,16 @@ class Main {
     ArrayDeque<Node> q = new ArrayDeque<>();
 
     q.offer(root);
-    q.offer(null);
+    Node end = new Node(-1);
+    q.offer(end);
 
     while(!q.isEmpty()){
       Node removed = q.poll();
 
-      if (removed == null) {
+      if (removed == end) {
           System.out.println();
           if (!q.isEmpty())
-              q.offer(null);
+              q.offer(end);
       }
       else {
           System.out.print(removed.data + " ");
@@ -106,17 +107,18 @@ class Node {
   //     1     2
   //    /     / \
   //   3     4   5
-  static Node myTree(){
+  static Node myTree() {
     Node[] bt = new Node[6];
-    for (int i = 0; i< bt.length; i++)
-      bt[i] = new Node(i);
+    for (int i = 0; i < bt.length; i++)
+        bt[i] = new Node(i);
 
     bt[0].left = bt[1];
     bt[1].left = bt[3];
-    bt[2].left = bt[4];
     bt[0].right = bt[2];
+    bt[2].left = bt[4];
     bt[2].right = bt[5];
 
     return bt[0];
   }
+
 }
