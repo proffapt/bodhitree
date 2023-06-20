@@ -6,15 +6,18 @@ class Main {
     Node node = null;
     Node bt = node.myTree();
 
-    // Q6 - Right view of a binary tree
+    // Q6 - Left view of a binary tree
     // Very fundamental changes for getting the left view, more or less similar
     qSix(bt);
     System.out.println();
   }
   
+  // remove `<-` lines and you will get right view of the binary tree
   static void qSix(Node root) {
     if(root == null) return;
 
+    int element = -1;
+    boolean filled = false; // <-
     ArrayDeque<Node> q = new ArrayDeque<>();
 
     q.offer(root);
@@ -25,12 +28,16 @@ class Main {
       Node removed = q.poll();
 
       if (removed == end) {
-          System.out.println();
+          System.out.print(element + " ");
           if (!q.isEmpty())
               q.offer(end);
+          filled = false; // <-
       }
       else {
-          System.out.print(removed.data + " ");
+          if (!filled){ // <-
+            element = removed.data;
+            filled = true; // <-
+          } // <-
 
           if (removed.left != null)
               q.offer(removed.left);

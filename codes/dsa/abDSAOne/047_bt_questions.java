@@ -23,6 +23,27 @@ class Main {
 
     // Q5 - Level Order Traversal with sense of change of level
     qFive(bt);
+
+    // Q6 - Recursive Level Order Traversal
+    // O(n^2)
+    System.out.print("Level Order Traversal recursive version = ");
+    for (int i = 1; i <= qOne(bt); i++) {
+      qSix(bt, i);
+      // System.out.println(); // Will make the Traversal sensitive to level
+    }
+    System.out.println();
+  }
+  
+  // This is a function which prints current level
+  static void qSix(Node root, int level) {
+    if(root == null) return;
+    
+    if (level == 1) {
+      System.out.print(root.data + " ");
+    } else if (level > 1) {
+      qSix(root.left, level-1);
+      qSix(root.right, level-1);
+    }
   }
   
   static void qFive(Node root){
