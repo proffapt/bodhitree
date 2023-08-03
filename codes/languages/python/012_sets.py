@@ -55,7 +55,7 @@ print("a =", a, ": b =", b)
 # Re-setting the values
 a = {1, 2, 5, 6}
 b = {3, 6, 7}
-a.difference_update(b) # Stores the value of ifference into a
+a.difference_update(b) # Stores the value of difference into a
 print("Sets after difference_update update")
 print("a =", a, ": b =", b)
 ### Set types checking
@@ -77,7 +77,7 @@ print("a =", a, ": b =", b)
     remove() & discard()
     If the entry is not found which was supposed to be deleted
         remove - throws an error
-        remove - DOES NOT throw an error
+        discard - DOES NOT throw an error
 '''
 # Popping out a random entry and catching it as well
 randnum = a.pop()
