@@ -23,4 +23,14 @@ func main() {
 	fmt.Printf("%v\n", proffapt.Age)
 	fmt.Printf("%+v\n", proffapt.Name) // -->> To note, it is same like earlier
 	fmt.Println(proffapt.Email)
+
+  // Creating inline structs
+  dog := struct {
+    name string
+    isGood bool
+  }{
+    "Rex",
+    true,
+  }
+  fmt.Println(dog)
 }
