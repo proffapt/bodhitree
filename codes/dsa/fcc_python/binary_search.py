@@ -42,3 +42,23 @@ def mutated_binary_search(nums, desired_num):
     
 nums = [1, 2, 2, 2, 2, 3, 3, 3, 4, 5, 6, 7, 7]
 print(mutated_binary_search(nums, 2))
+
+# Alternative method
+def smart_mutated_binary_search(list1):
+    lo, hi = 0, len(list1) - 1
+    
+    while lo <= hi:
+        mid = (lo + hi) // 2
+        mid_num = list1[mid]
+
+        where = where_to_go(list1, mid)
+        # The above function has the criteria to find the "desired_num"
+        
+        if where == "stop":
+            return len(list1) - mid_num + 1
+        elif where == "right":
+            lo = mid + 1
+        elif where == "left":
+            hi = mid - 1
+
+    return -1
