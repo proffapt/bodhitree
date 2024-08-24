@@ -58,18 +58,36 @@ def levelorder_traversal(root, traversal):
     q.appendleft(root)
 
     while len(q):
-        level = []
-        level.append(q.popleft())
-        
-        for node in level:
-            if node:
-                traversal.append(node.key)
-                q.append(node.left)
-                q.append(node.right)
+        node = q.popleft()
+        if node:
+            traversal.append(node.key)
+            q.append(node.left)
+            q.append(node.right)
     
 traversal = []
 levelorder_traversal(root, traversal)
 print("Level Order Traversal:", traversal)
+
+
+def level_distinct_order_traversal(root, traversal):
+    q = deque()
+    q.appendleft(root)
+
+    while len(q):
+        level = []
+        while len(q):
+            level.append(q.popleft())
+
+        for i, node in enumerate(level):
+            if node.left: q.append(node.left)
+            if node.right: q.append(node.right)
+            if node: level[i] = node.key
+
+        traversal.append(level)
+    
+traversal = []
+level_distinct_order_traversal(root, traversal)
+print("Level (distinct) Order Traversal:", traversal)
 
 
 class BinaryTree:
