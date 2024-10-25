@@ -8,4 +8,6 @@
 - cat
 - cURL (just enough)
 - sed (over the head)
-- htop (just enough as a daily driver task manager)
+- htop/top (just enough as a daily driver task manager)
+- tmux
+- User management (useradd, userdel, usermod, groupadd, groupdel, groupmod)
