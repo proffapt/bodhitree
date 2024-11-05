@@ -1,16 +1,16 @@
 def is_odd(num):
     return num % 2 != 0
 
-def evaluate_test_cases(test_cases):
-    for case in test_cases:
-        input_value = case['input']
-        expected_output = case['output']
-        actual_output = is_odd(input_value)
+def eval_cases(cases):
+    for case in cases:
+        input_val = case['input']
+        exp_val = case['output']
+        obs_val = is_odd(input_val)
         
-        if actual_output == expected_output:
-            print(f"[PASSED] {input_value} -> {expected_output}")
+        if obs_val == exp_val:
+            print(f"[PASSED] {input_val} -> {exp_val}")
         else:
-            print(f"[FAILED] {input_value} -> Expected: {expected_output}, Received: {actual_output}")
+            print(f"[FAILED] {input_val} -> Expected: {exp_val}, Received: {obs_val}")
 
 test_cases = []
 test_cases.append({
@@ -25,4 +25,4 @@ test_cases.append({
     'input': 2,
     'output': True
     })
-evaluate_test_cases(test_cases)
+eval_cases(test_cases)
